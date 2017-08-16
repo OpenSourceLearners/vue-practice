@@ -18,6 +18,7 @@
                 <button class="bottom-normal" @click="login">登录</button>
             </div>
         </div>
+        默认：admin-admin
         <!-- 表单域 -->
 
         <!-- 模态框 -->
@@ -41,7 +42,7 @@
         display: flex;
     }
     .form-key{
-        font-size: 0.6rem;
+        font-size: 1rem;
         width: 4rem;
         line-height: 2rem;
         text-align: right;
@@ -119,7 +120,7 @@
                     }
                     this.showModal({
                         title: '提示',
-                        content: res ? '登录成功' : '登录失败',
+                        content: '登录失败',
                     });
                 });
             },
