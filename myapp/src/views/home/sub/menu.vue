@@ -16,7 +16,7 @@
                 </router-link>
                 <!-- 导航列表 -->
                 <div class="menu-bottom">
-                    <p class="menu-btn-item">退出登录</p>
+                    <p class="menu-btn-item" @click="logout">退出登录</p>
                 </div>
             </nav>
         </transition>
@@ -99,15 +99,19 @@
         position:absolute;
         bottom: 0;
         background: #efefef;
+        box-sizing:border-box;
         display: flex;
+        justify-content: flex-end;
     }
     .menu-btn-item{
+        width: 50%;
+        text-align: center;
         line-height: 3rem;
-        flex: 1;
     }
 </style>
 <script>
     import {mapState, mapMutations} from 'vuex';
+    import {logout} from '../../../lib/user';
     export default {
         name: 'menu',
         components: {
@@ -116,6 +120,7 @@
         },
         data() {
             return {
+                //菜单列表
                 navList: [
                     {
                         name: '首页',
@@ -151,7 +156,10 @@
                 'hideMenu'
             ]),
             logout(){
-                
+                logout();
+                this.$router.push({
+                    path: '/login',
+                });
             }
         },
         created() {

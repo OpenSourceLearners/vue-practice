@@ -38,6 +38,13 @@ function checkLogin(username, password, callback){
     callback(flag);
 }
 
+function logout(){
+    sessionStorage.setItem('username', undefined);
+    sessionStorage.removeItem('accessToken');
+    return true;
+}
+
 export {
-    checkLogin
+    checkLogin,
+    logout
 };
