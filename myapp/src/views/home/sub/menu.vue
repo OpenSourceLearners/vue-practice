@@ -16,7 +16,7 @@
                 </router-link>
                 <!-- 导航列表 -->
                 <div class="menu-bottom">
-                    <p class="menu-btn-item">退出登录j</p>
+                    <p class="menu-btn-item">退出登录</p>
                 </div>
             </nav>
         </transition>
