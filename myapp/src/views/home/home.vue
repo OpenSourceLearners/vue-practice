@@ -22,6 +22,7 @@
     .header-menu-btn-line{
         width: 50%;
         height: 0.2rem;
+
         background: #fff;
     }
 </style>
@@ -32,7 +33,7 @@
         name: 'home',
         components: {
             'my-menu': menu,
-            'my-head': head
+            'my-head': head,
         },
         props: {},
         data() {
@@ -46,6 +47,7 @@
         methods: {
         },
         created() {
+            // setTimeos
         },
         destroyed() {
         },

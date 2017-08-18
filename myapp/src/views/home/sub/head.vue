@@ -11,6 +11,7 @@
     .header{
         height: 3rem;
         background: #2088e4;
+        box-shadow: 0 0 4px #999;
     }
     .header-menu-btn{
         width: 3rem;
