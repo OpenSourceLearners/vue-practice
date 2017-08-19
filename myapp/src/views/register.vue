@@ -1,5 +1,5 @@
 <template>
-    <div class="login-box">
+    <div class="register-box">
         <div class="head-area">
             <!-- 标题 -->
             <!-- <h1 class="title">Login</h1> -->
@@ -17,29 +17,32 @@
                 }"></div>
             </div> -->
             <div class="form-box flex-center">
+                <input type="text" v-model="user.email" placeholder="请输入电子邮箱" class="input-normal" id="email" />
+            </div>
+            <div class="form-box flex-center">
                 <input type="text" v-model="user.username" placeholder="请输入用户名" class="input-normal" id="username" />
             </div>
             <div class="form-box flex-center">
                 <input type="password" v-model="user.password" placeholder="请输入密码" class="input-normal" id="password" />
             </div>
             <div class="form-box flex-center">
-                <button class="bottom-normal" @click="login">登录</button>
+                <button class="bottom-normal" @click="register">注册</button>
             </div>
             <div class="register">
-                <button class="clear-btn" @click="toRegister">
-                    <span class="register-btn">Sign in</span>
+                <button class="clear-btn" @click="toLogin">
+                    <span class="register-btn">login in</span>
                     <span class="arrow"></span>
                 </button>
             </div>
         </div>
         <!-- 表单域 -->
         <!-- 模态框 -->
-        <my-modal :title="modal.title" :content="modal.content" :type="modal.type" v-model="modal.show"></my-modal>
+        <my-modal :title="modal.title" :content="modal.content" :type="modal.type" v-model="modal.show" @result="modal.callback"></my-modal>
         <!-- 模态框 -->
     </div>
 </template>
 <style scoped>
-    .login-box{
+    .register-box{
         position: fixed;
         width: 100%;
         height: 100%;
@@ -81,9 +84,9 @@
         padding: 0px 0.5rem;
         border: none;
         border-bottom: 2px solid #3c3c94;
-        background: transparent;
         display: inline-flex;
         float:left;
+        background: transparent;
     }
     .bottom-normal{
         color: #fff;
@@ -147,10 +150,10 @@
     }
 </style>
 <script>
-    import {checkLogin} from '../lib/user';
+    import {register} from '../lib/user';
     import myModal from '../components/myModal';
     export default {
-        name: 'login',
+        name: 'register',
         components: {
             'my-modal': myModal,
         },
@@ -161,6 +164,7 @@
                 user: {
                     username: '',
                     password: '',
+                    email: '',
                 },
 
                 // 模态框信息
@@ -169,8 +173,8 @@
                     content: '',
                     type: 1,
                     show: false,
+                    callback: '',
                 },
-
             };
         },
         computed: {
@@ -178,39 +182,38 @@
         watch: {
         },
         methods: {
-            //登录
-            login(){
-                if(this.user.username == '' || this.user.password == ''){
+            //注册
+            register(){
+                if(this.user.email == '' || this.user.username == '' || this.user.password == ''){
                     this.showModal({
                         title: '提示',
-                        content: '用户名和密码不能为空',
+                        content: '用户名和密码和邮箱不能为空！',
                     });
                     return ;
                 }
-                // checkLogin(this.user.username, this.user.password, (res) => {
-                //     if(res){
-                //         this.$router.push({path: '/home'});
-                //     }else{
-                //         this.showModal({
-                //             title: '提示',
-                //             content: '登录失败',
-                //         });
-                //     }
-                // });
-                checkLogin(this.user)
-                .then(() => {
-                    this.$router.push({path: '/home'});
-                }).
-                catch((error) => {
+                register(this.user)
+                .then((data) => {
+                    this.user.map((value, index, el) => {
+                        el[index] = '';
+                    });
                     this.showModal({
                         title: '提示',
-                        content: errpr.message,
+                        content: data.message,
+                        callback: 'toLogin',
+                    });
+                })
+                .catch((data) => {
+                    this.showModal({
+                        title: '提示',
+                        content: data.message,
                     });
                 });
             },
-            //注册
-            register(){
-
+            //跳转登录页面
+            toLogin(){
+                this.$router.push({
+                    path: '/login'
+                });
             },
             //显示模态框
             showModal(config){
@@ -221,11 +224,6 @@
                 }
                 this.modal.show = true;
             },
-            toRegister(){
-                this.$router.push({
-                    path: '/register'
-                });
-            }
         },
         created() {
         },

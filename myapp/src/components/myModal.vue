@@ -34,7 +34,6 @@
         top: 25%;
         margin-left: -7rem;
         z-index: 1001;
-        border-radius: 0.3rem;
         background: #fff;
     }
     .modal-title{

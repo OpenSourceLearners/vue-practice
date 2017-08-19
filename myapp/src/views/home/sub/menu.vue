@@ -27,6 +27,7 @@
 </template>
 <style scoped>
     .menu{
+        color: #fff;
         font-size: 1rem;
         width: 70%;
         height: 100%;
@@ -35,11 +36,12 @@
         left: 0;
         z-index: 1001;
         display: flex;
-        background: #fff;
+        background: #3c3c94;
         flex-direction: column;
         box-shadow: 0 0 4px #666;
     }
     .menu-item{
+        color: #fff;
         font-size: 1rem;
         line-height: 2.5rem;
         display: flex;
@@ -55,7 +57,7 @@
         height: 6px;
         width: 6px;
         border-width: 2px 2px 0 0;
-        border-color: #999;
+        border-color: #fff;
         border-style: solid;
         transform: rotate(45deg);
     }
@@ -64,12 +66,10 @@
         height: 100%;
         position: fixed;
         z-index: 1000;
-        background: rgba(0, 0, 0, 0.4);
-         opacity: 1; 
+        opacity: 1; 
     }
     .user-msg{
         font-weight: bold;
-        background: #efefef;
         height: 5rem;
         padding: 1rem 0.5rem 0;
         font-size: 1rem;
@@ -98,7 +98,6 @@
         height: 3rem;
         position:absolute;
         bottom: 0;
-        background: #efefef;
         box-sizing:border-box;
         display: flex;
         justify-content: flex-end;
@@ -112,6 +111,7 @@
 <script>
     import {mapState, mapMutations} from 'vuex';
     import {logout} from '../../../lib/user';
+    import '../../../assets/css/home/menu.css';
     export default {
         name: 'menu',
         components: {
@@ -139,6 +139,12 @@
                         path: '',
                     },
                 ],
+                //移动属性
+                move: {
+                    startX: 0,
+                    lastX: 0,
+                    left: 0,
+                }
             };
         },
         computed: {
@@ -153,16 +159,26 @@
         },
         methods: {
             ...mapMutations([
-                'hideMenu'
+                'hideMenu',
+                'showMenu'
             ]),
             logout(){
                 logout();
+                this.hideMenu();
                 this.$router.push({
                     path: '/login',
                 });
-            }
+            },
         },
         created() {
+            if(parseInt(window.screen.width) >= 768){
+                this.showMenu();
+            }
+            window.onresize = () => {
+                if(parseInt(window.screen.width) >= 768){
+                    this.showMenu();
+                }
+            }
         },
         destroyed() {
         },

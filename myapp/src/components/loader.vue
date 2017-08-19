@@ -26,7 +26,7 @@
         width: 1.5rem;
         height: 1.5rem;
         border-radius: 1rem;
-        background: #2088e4;
+        background: #3c3c94;
         animation: zooming 1.4s infinite ;
     }
     .loader > div:nth-child(1){

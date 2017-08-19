@@ -6,7 +6,8 @@ module.exports = {
     entry: './src/main.js', //入口文件
     output: {   //输出文件
         path: path.resolve(__dirname, '../public/static/js/'),
-        publicPath: process.env.NODE_ENV === 'production' ? './static/js/' : 'http://127.0.0.1:9999/dist/',
+        // publicPath: process.env.NODE_ENV === 'production' ? './static/js/' : 'http://127.0.0.1:9999/dist/',
+        publicPath: './static/js/',
         filename: 'build.js',   //生成的文件
         chunkFilename: '[name].js'
     },

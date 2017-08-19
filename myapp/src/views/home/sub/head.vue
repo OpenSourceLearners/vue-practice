@@ -5,17 +5,20 @@
             <p class="header-menu-btn-line"></p>
             <p class="header-menu-btn-line"></p>
         </div>
+        <div class="arrow"></div>
     </header>
 </template>
 <style scoped>
     .header{
-        height: 3rem;
-        background: #2088e4;
-        box-shadow: 0 0 4px #999;
+        width: 100%;
+        height: 2.6rem;
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
     }
     .header-menu-btn{
         width: 3rem;
-        height: 2rem;
+        height: 1.6rem;
         padding: 0.5rem 0;
         display: flex;
         flex-direction: column;
@@ -25,7 +28,21 @@
     .header-menu-btn-line{
         width: 50%;
         height: 0.2rem;
-        background: #fff;
+        background: #3c3c94;
+    }
+    .arrow{
+        padding-top: 1rem;
+        padding-right: 1rem;
+    }
+    .arrow:after {
+        content: " ";
+        display: inline-block;
+        height: 0.6rem;
+        width: 0.6rem;
+        border-width: 2px 2px 0 0;
+        border-color: #3c3c94;
+        border-style: solid;
+        transform: rotate(45deg);
     }
 </style>
 <script>
