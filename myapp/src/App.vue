@@ -6,6 +6,9 @@
     </div>
 </template>
 <style scoped>
+    .app-box{
+        min-width: 320px;
+    }
     .left-slide-fade-active, .left-slide-fade-leave-active{
         transition: transform .3s;
     }

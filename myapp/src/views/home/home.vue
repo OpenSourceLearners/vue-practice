@@ -3,6 +3,7 @@
         <my-menu class="menu-box"></my-menu>
         <article class="main">
             <my-head></my-head>
+            <router-view></router-view>
         </article>
         <!-- <my-main></my-main> -->
     </div>

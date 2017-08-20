@@ -23,6 +23,9 @@
         <transition name="hide-fade">
             <div class="bg-modal" @click="hideMenu" v-show="menuShowState"></div>
         </transition>
+        <!-- 模态框 -->
+        <my-modal :title="modal.title" :content="modal.content" :type="modal.type" v-model="modal.show"></my-modal>
+        <!-- 模态框 -->
     </div>
 </template>
 <style scoped>
@@ -112,9 +115,11 @@
     import {mapState, mapMutations} from 'vuex';
     import {logout} from '../../../lib/user';
     import '../../../assets/css/home/menu.css';
+    import myModal from '../../../components/myModal';
     export default {
         name: 'menu',
         components: {
+            'my-modal': myModal,
         },
         props: {
         },
@@ -144,7 +149,14 @@
                     startX: 0,
                     lastX: 0,
                     left: 0,
-                }
+                },
+                // 模态框信息
+                modal: {
+                    title: '',
+                    content: '',
+                    type: 1,
+                    show: false,
+                },
             };
         },
         computed: {
@@ -169,16 +181,17 @@
                     path: '/login',
                 });
             },
+            //显示模态框
+            showModal(config){
+                for(let i in config){
+                    if(this.modal[i] != undefined){
+                        this.modal[i] = config[i];
+                    }
+                }
+                this.modal.show = true;
+            },
         },
         created() {
-            if(parseInt(window.screen.width) >= 768){
-                this.showMenu();
-            }
-            window.onresize = () => {
-                if(parseInt(window.screen.width) >= 768){
-                    this.showMenu();
-                }
-            }
         },
         destroyed() {
         },

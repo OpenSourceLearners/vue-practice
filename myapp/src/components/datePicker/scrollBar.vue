@@ -90,15 +90,19 @@
                 require: true,
             },
             //默认索引值
-            defaultIndex: {
+            // defaultIndex: {
+            //     type: Number,
+            //     default: 0,
+            // }
+            value: {
                 type: Number,
-                default: 0,
+                default: 0
             }
         },
         data() {
             return {
                 //选中的索引
-                selectIndex: this.defaultIndex,
+                selectIndex: this.value,
                 //开始触摸的Y轴位置
                 startY: 0,
                 //上一次事件的Y轴位置
@@ -121,9 +125,15 @@
         },
         watch: {
             //更新位置
-            data(oldValue, newValue) {
+            data(newVal, oldVal) {
                 this.selectIndex = this.checkOutScope(this.selectIndex);
-            }
+            },
+            value(newVal, oldVal){
+                this.selectIndex = newVal;
+            },
+            // selectIndex(newVal, oldVal){
+            //     this.$emit('input', newVal);
+            // }
         },
         methods: {
             //触摸开始事件
@@ -195,7 +205,7 @@
             },
             //触发改变位置
             chenge() {
-                this.$emit('chenge', this.selectIndex);
+                this.$emit('input', this.selectIndex);
             }
         },
         created() {

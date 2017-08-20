@@ -193,19 +193,22 @@
                 }
                 register(this.user)
                 .then((data) => {
-                    this.user.map((value, index, el) => {
-                        el[index] = '';
-                    });
+                    // this.user.map((value, index, el) => {
+                    //     el[index] = '';
+                    // });
+                    for(var i in this.user){
+                        this.user[i] = '';
+                    }
                     this.showModal({
                         title: '提示',
-                        content: data.message,
+                        content: data.msg,
                         callback: 'toLogin',
                     });
                 })
                 .catch((data) => {
                     this.showModal({
                         title: '提示',
-                        content: data.message,
+                        content: data.msg,
                     });
                 });
             },

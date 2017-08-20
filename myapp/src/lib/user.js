@@ -1,5 +1,5 @@
 import http from './http';
-const url = "http://localhost/public/index/";
+const url = "/public/index/";
 //登录验证
 function checkLogin(user){
     /*
@@ -41,37 +41,60 @@ function checkLogin(user){
     return new Promise((resolve, reject) => {
         http.post(url + 'login/login', {username: user.username, password: user.password})
         .then((data) => {
-            sessionStorage.setItem('username', username);
+            sessionStorage.setItem('username', user.username);
             sessionStorage.setItem('accessToken', data.token);
             resolve(data);
         })
-        .catch(error => reject(error));
+        .catch((error) => {
+            reject(error)
+        });
     });
 }
 
 function logout(){
-    return new Promise((resolve, reject) => {
-        http.post(url + 'login/outlogin')
-        .then((data) => {
-            sessionStorage.removeItem('username');
-            sessionStorage.removeItem('accessToken');
-            resolve(data);
-        }).catch(error => reject(error))
+    http.post(url + 'login/outlogin')
+    .then((data) => {
+        sessionStorage.removeItem('username');
+        sessionStorage.removeItem('accessToken');
+    })
+    .catch((error) => {
     });
-}
+}   
 
 function register(user){
     return new Promise((resolve, reject) => {
+        // checkEmail(user.email)
+        // .then((data) => {
+        //     checkUsername(user.username)
+        //     .then((data) => {
+        //         http.post(url + 'register/login', {username: user.username, password: user.password})
+        //         .then((data) => {
+        //             resolve(data);
+        //         })
+        //         .catch((error) => {
+        //             reject(error)
+        //         });
+        //     })
+        //     .catch((error) => {
+        //         reject(error)
+        //     });
+        // })
+        // .catch((error) => {
+        //     reject(error)
+        // });
         checkEmail(user.email)
         .then((data) => {
-            checkUsername(user.username)
-            .then((data) => {
-                http.post(url + 'register/login', {username: user.username, password: user.password})
-                .then((data) => {
-                    resolve(data);
-                }).catch(error => reject(error));
-            }).catch(error => reject(error));
-        }).catch(error => reject(error));
+            return checkUsername(user.username);
+        })
+        .then((data) => {
+            return http.post(url + 'register/register', {username: user.username, password: user.password, email: user.email});
+        })
+        .then((data) => {
+            return resolve(data);
+        })
+        .catch((error) => {
+            return reject(error);
+        });
     });
 }
 

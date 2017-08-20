@@ -49,6 +49,14 @@ module.exports = {
             inject: true
         }),
     ],
+    devServer:{
+        proxy: {
+            '/public/**': {
+                target: 'http://127.0.0.1/',
+                secure: false
+            }
+        }
+    }
 };
 if (process.env.NODE_ENV === 'production') {
     module.exports.devtool = '#source-map'

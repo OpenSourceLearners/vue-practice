@@ -1,38 +1,38 @@
 import axios from 'axios';
 import qs from 'qs';
 
-axios({
+var instance = axios.create({
     headers: {'X-Requested-With': 'XMLHttpRequest'},
 });
 
 function get(url, params){
     return new Promise((resolve, reject) => {
-        axios.get(url, {params})
+        instance.get(url, {params})
         .then(({data}) => {
             if(data.code == 200){
-                return resolve(data.data);
+                resolve(data);
             }else{
-                return reject({code: data.code, message: data.msg});
+                reject({code: data.code, msg: data.msg});
             }
         })
         .catch(() => {
-            return reject({code: 503, message: '服务器大概是被UFO带走了!'});
+            reject({code: 503, msg: '服务器大概是被UFO带走了!'});
         });
     });
 }
 function post(url, params){
     params = qs.stringify(params);
     return new Promise((resolve, reject) => {
-        axios.post(url, params)
+        instance.post(url, params)
         .then(({data}) => {
             if(data.code == 200){
-                return resolve(data.data);
+                resolve(data);
             }else{
-                return reject({code: data.code, message: data.msg});
+                reject({code: data.code, msg: data.msg});
             }
         })
         .catch(() => {
-            return reject({code: 503, message: '服务器大概是被UFO带走了!'});
+            reject({code: 503, msg: '服务器大概是被UFO带走了!'});
         });
     });
 }

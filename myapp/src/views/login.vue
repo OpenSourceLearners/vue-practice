@@ -204,7 +204,7 @@
                 catch((error) => {
                     this.showModal({
                         title: '提示',
-                        content: errpr.message,
+                        content: error.msg,
                     });
                 });
             },
