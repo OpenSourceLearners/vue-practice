@@ -1,13 +1,12 @@
 var path = require('path'); //路径插件
 var webpack = require('webpack');   //webapck
 var htmlWebpack = require('html-webpack-plugin');   //自动生成index.html模板
-
 module.exports = {
     entry: './src/main.js', //入口文件
     output: {   //输出文件
         path: path.resolve(__dirname, '../public/static/js/'),
         // publicPath: process.env.NODE_ENV === 'production' ? './static/js/' : 'http://127.0.0.1:9999/dist/',
-        publicPath: './static/js/',
+        // publicPath: './static/js/',
         filename: 'build.js',   //生成的文件
         chunkFilename: '[name].js'
     },
