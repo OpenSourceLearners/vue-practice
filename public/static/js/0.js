@@ -913,7 +913,8 @@ exports.default = {
     props: {},
     data: function data() {
         return {
-            page: 0
+            page: 0,
+            ws: undefined
         };
     },
 
@@ -921,16 +922,31 @@ exports.default = {
     watch: {},
     methods: {},
     created: function created() {
+        var _this = this;
+
+        if (WebSocket) {
+            this.ws = new WebSocket('ws://127.0.0.1:1234');
+            this.ws.onopen = function () {
+                alert("连接成功");
+                _this.ws.send('tom');
+                alert("给服务端发送一个字符串：tom");
+            };
+            this.ws.onmessage = function (e) {
+                alert("收到服务端的消息：" + e.data);
+            };
+        } else {
+            alert('您得浏览器不支持WebSocket');
+        }
         // setTimeos
-        ws = new WebSocket("ws://127.0.0.1:1234");
-        ws.onopen = function () {
-            alert("连接成功");
-            ws.send('tom');
-            alert("给服务端发送一个字符串：tom");
-        };
-        ws.onmessage = function (e) {
-            alert("收到服务端的消息：" + e.data);
-        };
+        // ws = new WebSocket("ws://127.0.0.1:1234");
+        // ws.onopen = function() {
+        //     alert("连接成功");
+        //     ws.send('tom');
+        //     alert("给服务端发送一个字符串：tom");
+        // };
+        // ws.onmessage = function(e) {
+        //     alert("收到服务端的消息：" + e.data);
+        // };
     },
     destroyed: function destroyed() {},
     mounted: function mounted() {}
