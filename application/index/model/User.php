@@ -25,4 +25,5 @@ class User extends Model{
     public function setLastIpAttr($value){
             return request()->ip();
     }
+
 }

@@ -21,33 +21,34 @@ class Login extends Base {
             } else {
                 $where['username'] = $data['username'];
             }
+            $where['password']=md5($data['password']);
             $user = Db::name('user')->where($where)->find();
             if ($user) {
                 Db::name('user')->where(array('user_id' => $user['user_id']))->update(array('last_time' => time(), 'last_ip' => request()->ip()));
                 $token = md5($user['username'] . $user['user_id']);
                 session('Uid', $user['user_id']);
                 session('token', $token);
-                return ['code' => '200', 'msg' => '登录成功！', 'data' => $token];
+                return $this->GetCorrect('登录成功！',['token'=>$token]);
             } else {
-                return ['code' => '400', 'msg' => '登录失败!', 'data' => ''];
+                return $this->GetError('登录失败，账号或密码错误');
             }
         } else {
-            return ['code' => '400', 'msg' => '当前不是Ajax请求！', 'data' => ''];
+            return $this->GetError('当前不是Ajax操作！');
         }
     }
 //    验证码
-    public function verify(){
-        $data = input('post.verify');
-        if(!captcha_check($data)){
-            return ['code'=>'200','msg'=>'验证码错误','data'=>''];
-        }else{
-            return ['code'=>'400','msg'=>'验证码正确','data'=>''];
-        }
-    }
+//    public function verify(){
+//        $data = input('post.verify');
+//        if(!captcha_check($data)){
+//            return ['code'=>'200','msg'=>'验证码错误','data'=>''];
+//        }else{
+//            return ['code'=>'400','msg'=>'验证码正确','data'=>''];
+//        }
+//    }
 //    退出登录
     public function outlogin(){
         session_destroy();
-        return ['code'=>'200','msg'=>'退出登录','data'=>''];
+        return $this->GetCorrect('退出登录成功！');
     }
 
 }
