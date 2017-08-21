@@ -49,9 +49,9 @@ class Register extends Base{
         $data = input('post.username');
         $res=Db::name('user')->where(array('username'=>$data))->find();
         if($res){
-            return $this->GetCorrect('用户名未被注册！');
-        }else{
             return $this->GetError('用户名已被注册！');
+        }else{
+            return $this->GetCorrect('用户名未被注册！');
         }
     }
 }
