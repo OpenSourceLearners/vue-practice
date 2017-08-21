@@ -16402,13 +16402,14 @@ var home = function home(resolve) {
     return __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(121)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var login = function login(resolve) {
-    return __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(122)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(122)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var register = function register(resolve) {
-    return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(123)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(123)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
-var datePicker = function datePicker(resolve) {
-    return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(124)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+// const datePicker = resolve => require(['../views/datePicker/datePickerTest'], resolve);
+var content = function content(resolve) {
+    return __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(124)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 
 // const App = resolve => require.ensure(['../App.vue'], () => resoleve(require('../App.vue')));
@@ -16426,21 +16427,22 @@ var myRouter = new _vueRouter2.default({
             component: home,
             children: [{
                 path: '',
-                component: datePicker
+                component: content
             }]
         }, { path: '/login', component: login, meta: { noAuth: true } }, { path: '/register', component: register, meta: { noAuth: true } }, { path: '*', redirect: '/home' }]
     }]
 });
 
 myRouter.beforeEach(function (to, from, next) {
-    // if(!to.matched.some(record => record.meta.noAuth) && !sessionStorage.getItem('accessToken') && sessionStorage.getItem('accessToken') == undefined){
-    //     next({
-    //         path: '/login',
-    //     });
-    // }else{ 
-    //     next();
-    // }
-    next();
+    if (!to.matched.some(function (record) {
+        return record.meta.noAuth;
+    }) && !sessionStorage.getItem('accessToken') && sessionStorage.getItem('accessToken') == undefined) {
+        next({
+            path: '/login'
+        });
+    } else {
+        next();
+    }
 });
 
 exports.default = myRouter;

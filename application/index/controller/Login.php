@@ -47,7 +47,8 @@ class Login extends Base {
 //    }
 //    退出登录
     public function outlogin(){
-        session_destroy();
+        session('Uid','');
+        session('token','');
         return $this->GetCorrect('退出登录成功！');
     }
 
