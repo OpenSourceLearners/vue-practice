@@ -20,38 +20,38 @@ class Register extends Base{
             $data = input('post.');
             $reg = User::create($data);
             if($reg->user_id){
-                return ['code'=>'200','msg'=>'注册成功！','data'=>$reg->user_id];
+                return $this->GetCorrect('注册成功！',['userid'=>$reg->user_id]);
             }else{
-                return ['code'=>'400','msg'=>'注册失败了呀,重新注册一次吧！','data'=>''];
+                return $this->GetError('注册失败了呀,重新注册一次吧！');
             }
         }else{
-            return ['code'=>'400','msg'=>'当前不是Ajax请求!','data'=>''];
+            return $this->GetError('当前不是Ajax操作！');
         }
     }
-    public function verify(){
-        $data = input('post.verify');
-        if(!captcha_check($data)){
-            return ['code'=>'200','msg'=>'验证码错误','data'=>''];
-        }else{
-            return ['code'=>'400','msg'=>'验证码正确','data'=>''];
-        }
-    }
+//    public function verify(){
+//        $data = input('post.verify');
+//        if(!captcha_check($data)){
+//            return ['code'=>'200','msg'=>'验证码错误','data'=>''];
+//        }else{
+//            return ['code'=>'400','msg'=>'验证码正确','data'=>''];
+//        }
+//    }
     public function verifyEmail(){
         $data = input('post.email');
         $res=Db::name('user')->where(array('email'=>$data))->find();
         if($res){
-            return ['code'=>'200','msg'=>'邮箱被注册了！','data'=>''];
+            return $this->GetError('邮箱已被注册！');
         }else{
-            return ['code'=>'400','msg'=>'邮箱没有重复！','data'=>''];
+            return $this->GetCorrect('邮箱未被注册！');
         }
     }
     public function verifyUserName(){
         $data = input('post.username');
         $res=Db::name('user')->where(array('username'=>$data))->find();
         if($res){
-            return ['code'=>'200','msg'=>'用户名被注册了！','data'=>''];
+            return $this->GetCorrect('用户名未被注册！');
         }else{
-            return ['code'=>'400','msg'=>'用户名没有重复！','data'=>''];
+            return $this->GetError('用户名已被注册！');
         }
     }
 }
