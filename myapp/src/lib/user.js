@@ -52,10 +52,10 @@ function checkLogin(user){
 }
 
 function logout(){
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('accessToken');
     http.post(url + 'login/outlogin')
     .then((data) => {
-        sessionStorage.removeItem('username');
-        sessionStorage.removeItem('accessToken');
     })
     .catch((error) => {
     });

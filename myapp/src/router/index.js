@@ -9,7 +9,8 @@ const App = resolve => require(['../App'], resolve);
 const home = resolve => require(['../views/home/home'], resolve);
 const login = resolve => require(['../views/login'], resolve);
 const register = resolve => require(['../views/register'], resolve);
-const datePicker = resolve => require(['../views/datePicker/datePickerTest'], resolve);
+// const datePicker = resolve => require(['../views/datePicker/datePickerTest'], resolve);
+const content = resolve => require(['../views/content/content'], resolve);
 
 // const App = resolve => require.ensure(['../App.vue'], () => resoleve(require('../App.vue')));
 // const App = resolve => require.ensure(['../views/home/home.vue'], () => resoleve(require('../views/home/home.vue')));
@@ -29,7 +30,7 @@ var myRouter =  new Router({
                     children:[
                         {
                             path:'',
-                            component: datePicker
+                            component: content
                         }
                     ],
                 },
@@ -42,14 +43,13 @@ var myRouter =  new Router({
 });
 
 myRouter.beforeEach((to, from, next) => {
-    // if(!to.matched.some(record => record.meta.noAuth) && !sessionStorage.getItem('accessToken') && sessionStorage.getItem('accessToken') == undefined){
-    //     next({
-    //         path: '/login',
-    //     });
-    // }else{ 
-    //     next();
-    // }
-    next();
+    if(!to.matched.some(record => record.meta.noAuth) && !sessionStorage.getItem('accessToken') && sessionStorage.getItem('accessToken') == undefined){
+        next({
+            path: '/login',
+        });
+    }else{ 
+        next();
+    }
 })
 
 export default myRouter;
