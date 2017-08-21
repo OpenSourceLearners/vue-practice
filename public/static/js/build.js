@@ -136,7 +136,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/public/static/js/";
+/******/ 	__webpack_require__.p = "./";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
@@ -16402,10 +16402,10 @@ var home = function home(resolve) {
     return __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(121)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var login = function login(resolve) {
-    return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(122)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(122)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var register = function register(resolve) {
-    return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(123)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(123)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 // const datePicker = resolve => require(['../views/datePicker/datePickerTest'], resolve);
 var content = function content(resolve) {
@@ -16688,7 +16688,7 @@ exports = module.exports = __webpack_require__(48)(undefined);
 
 
 // module
-exports.push([module.i, "@charset \"utf-8\";\r\nbody, ul, ol, li, h1, h2, h3, h4, h5, h6, p, dl ,dt, dd {\r\n    margin: 0;\r\n}\r\nbody {\r\n    color:#333;\r\n    font: 12px 'Helvetica';\r\n}\r\na {\r\n    color:#333;\r\n    text-decoration:none;\r\n}\r\na:link,a:visited {\r\n    color:#333;\r\n}\r\n\r\n/*解决谷歌浏览器选中输入框背景色变黄*/\r\ninput:-webkit-autofill {\r\n    -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;\r\n    -webkit-text-fill-color: none!important;\r\n}\r\ninput:focus, button:focus{\r\n    outline: none;\r\n}", ""]);
+exports.push([module.i, "@charset \"utf-8\";\r\nbody, ul, ol, li, h1, h2, h3, h4, h5, h6, p, dl ,dt, dd {\r\n    margin: 0;\r\n}\r\nbody {\r\n    color:#333;\r\n    font: 12px 'Helvetica';\r\n}\r\na {\r\n    color:#333;\r\n    text-decoration:none;\r\n}\r\na:link,a:visited {\r\n    color:#333;\r\n}\r\n\r\n/*解决谷歌浏览器选中输入框背景色变黄*/\r\ninput:-webkit-autofill {\r\n    -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;\r\n    -webkit-text-fill-color: none!important;\r\n}\r\ninput:focus, button:focus{\r\n    outline: none;\r\n}\r\nhtml, body{\r\n    height: 100%;\r\n}", ""]);
 
 // exports
 

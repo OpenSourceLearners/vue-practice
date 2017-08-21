@@ -445,7 +445,7 @@ exports = module.exports = __webpack_require__(48)(undefined);
 
 
 // module
-exports.push([module.i, "\n.app-box[data-v-3d84d39e]{\n    min-width: 320px;\n}\n.left-slide-fade-active[data-v-3d84d39e], .left-slide-fade-leave-active[data-v-3d84d39e]{\n    transition: transform .3s;\n}\n.left-slide-fade-enter[data-v-3d84d39e], .left-slide-fade-leave-to[data-v-3d84d39e]{\n    transform:translateX(-100%);\n}\n.right-slide-fade-active[data-v-3d84d39e], .right-slide-fade-leave-active[data-v-3d84d39e]{\n    transition: transform .3s;\n}\n.right-slide-fade-enter[data-v-3d84d39e], .right-slide-fade-leave-to[data-v-3d84d39e]{\n    transform:translateX(100%);\n}\n", ""]);
+exports.push([module.i, "\n.app-box[data-v-3d84d39e]{\n    height: 100%;\n    min-width: 320px;\n}\n.left-slide-fade-active[data-v-3d84d39e], .left-slide-fade-leave-active[data-v-3d84d39e]{\n    transition: transform .3s;\n}\n.left-slide-fade-enter[data-v-3d84d39e], .left-slide-fade-leave-to[data-v-3d84d39e]{\n    transform:translateX(-100%);\n}\n.right-slide-fade-active[data-v-3d84d39e], .right-slide-fade-leave-active[data-v-3d84d39e]{\n    transition: transform .3s;\n}\n.right-slide-fade-enter[data-v-3d84d39e], .right-slide-fade-leave-to[data-v-3d84d39e]{\n    transform:translateX(100%);\n}\n", ""]);
 
 // exports
 
@@ -461,6 +461,7 @@ exports.push([module.i, "\n.app-box[data-v-3d84d39e]{\n    min-width: 320px;\n}\
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
 //
 //
 //
