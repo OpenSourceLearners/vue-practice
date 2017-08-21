@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		4: 0
+/******/ 		5: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -136,7 +136,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "./static/js/";
+/******/ 	__webpack_require__.p = "/public/static/js/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
@@ -12765,38 +12765,38 @@ var _qs2 = _interopRequireDefault(_qs);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _axios2.default)({
+var instance = _axios2.default.create({
     headers: { 'X-Requested-With': 'XMLHttpRequest' }
 });
 
 function get(url, params) {
     return new _promise2.default(function (resolve, reject) {
-        _axios2.default.get(url, { params: params }).then(function (_ref) {
+        instance.get(url, { params: params }).then(function (_ref) {
             var data = _ref.data;
 
             if (data.code == 200) {
-                return resolve(data.data);
+                resolve(data);
             } else {
-                return reject({ code: data.code, message: data.msg });
+                reject({ code: data.code, msg: data.msg });
             }
         }).catch(function () {
-            return reject({ code: 503, message: '服务器大概是被UFO带走了!' });
+            reject({ code: 503, msg: '服务器大概是被UFO带走了!' });
         });
     });
 }
 function post(url, params) {
     params = _qs2.default.stringify(params);
     return new _promise2.default(function (resolve, reject) {
-        _axios2.default.post(url, params).then(function (_ref2) {
+        instance.post(url, params).then(function (_ref2) {
             var data = _ref2.data;
 
             if (data.code == 200) {
-                return resolve(data.data);
+                resolve(data);
             } else {
-                return reject({ code: data.code, message: data.msg });
+                reject({ code: data.code, msg: data.msg });
             }
         }).catch(function () {
-            return reject({ code: 503, message: '服务器大概是被UFO带走了!' });
+            reject({ code: 503, msg: '服务器大概是被UFO带走了!' });
         });
     });
 }
@@ -16396,16 +16396,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // import login from '../views/login';
 
 var App = function App(resolve) {
-    return __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(120)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(120)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var home = function home(resolve) {
     return __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(121)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var login = function login(resolve) {
-    return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(122)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(122)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 var register = function register(resolve) {
-    return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(123)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(123)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+};
+var datePicker = function datePicker(resolve) {
+    return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(124)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 
 // const App = resolve => require.ensure(['../App.vue'], () => resoleve(require('../App.vue')));
@@ -16418,20 +16421,26 @@ var myRouter = new _vueRouter2.default({
     routes: [{
         path: '/',
         component: App,
-        children: [{ path: '/home', component: home }, { path: '/login', component: login, meta: { noAuth: true } }, { path: '/register', component: register, meta: { noAuth: true } }, { path: '*', redirect: '/home' }]
+        children: [{
+            path: '/home',
+            component: home,
+            children: [{
+                path: '',
+                component: datePicker
+            }]
+        }, { path: '/login', component: login, meta: { noAuth: true } }, { path: '/register', component: register, meta: { noAuth: true } }, { path: '*', redirect: '/home' }]
     }]
 });
 
 myRouter.beforeEach(function (to, from, next) {
-    if (!to.matched.some(function (record) {
-        return record.meta.noAuth;
-    }) && !sessionStorage.getItem('accessToken') && sessionStorage.getItem('accessToken') == undefined) {
-        next({
-            path: '/login'
-        });
-    } else {
-        next();
-    }
+    // if(!to.matched.some(record => record.meta.noAuth) && !sessionStorage.getItem('accessToken') && sessionStorage.getItem('accessToken') == undefined){
+    //     next({
+    //         path: '/login',
+    //     });
+    // }else{ 
+    //     next();
+    // }
+    next();
 });
 
 exports.default = myRouter;
