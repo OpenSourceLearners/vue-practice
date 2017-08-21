@@ -468,21 +468,37 @@ function checkLogin(user) {
     // sessionStorage.setItem('username', username)
     // sessionStorage.setItem('accessToken', token);
     // callback(flag);
+    // return new Promise((resolve, reject) => {
+    //     http.post(url + 'login/login', {username: user.username, password: user.password})
+    //     .then((data) => {
+    //         sessionStorage.setItem('username', user.username);
+    //         sessionStorage.setItem('accessToken', data.token);
+    //         resolve(data);
+    //     })
+    //     .catch((error) => {
+    //         reject(error)
+    //     });
+    // });
     return new _promise2.default(function (resolve, reject) {
-        _http2.default.post(url + 'login/login', { username: user.username, password: user.password }).then(function (data) {
+        if (!localStorage.getItem(user.username)) {
+            reject({ msg: '用户不存在！' });
+        } else if (localStorage.getItem(user.username) != user.password) {
+            reject({ msg: '密码错误！' });
+        } else {
             sessionStorage.setItem('username', user.username);
-            sessionStorage.setItem('accessToken', data.token);
-            resolve(data);
-        }).catch(function (error) {
-            reject(error);
-        });
+            resolve({ msg: '登录成功！' });
+        }
     });
 }
 
 function logout() {
     sessionStorage.removeItem('username');
-    sessionStorage.removeItem('accessToken');
-    _http2.default.post(url + 'login/outlogin').then(function (data) {}).catch(function (error) {});
+    // sessionStorage.removeItem('accessToken');
+    // http.post(url + 'login/outlogin')
+    // .then((data) => {
+    // })
+    // .catch((error) => {
+    // });
 }
 
 function register(user) {
@@ -506,10 +522,16 @@ function register(user) {
         // .catch((error) => {
         //     reject(error)
         // });
-        checkEmail(user.email).then(function (data) {
-            return checkUsername(user.username);
-        }).then(function (data) {
-            return _http2.default.post(url + 'register/register', { username: user.username, password: user.password, email: user.email });
+        checkUsername(user.username).then(function (data) {
+            // return http.post(url + 'register/register', {username: user.username, password: user.password, email: user.email});
+            return new _promise2.default(function (resolve, reject) {
+                try {
+                    localStorage.setItem(user.username, user.password);
+                    resolve({ msg: '注册成功！' });
+                } catch (e) {
+                    reject({ msg: e.message });
+                }
+            });
         }).then(function (data) {
             return resolve(data);
         }).catch(function (error) {
@@ -523,7 +545,16 @@ function checkEmail(email) {
 }
 
 function checkUsername(username) {
-    return _http2.default.post(url + 'register/verifyUserName', { username: username });
+    // return http.post(url + 'register/verifyUserName', {username: username});
+    return new _promise2.default(function (resolve, reject) {
+        if (localStorage.getItem(username)) {
+            reject({
+                msg: '该用户已注册！'
+            });
+        } else {
+            resolve();
+        }
+    });
 }
 exports.checkLogin = checkLogin;
 exports.logout = logout;
@@ -922,21 +953,19 @@ exports.default = {
     watch: {},
     methods: {},
     created: function created() {
-        var _this = this;
-
-        if (WebSocket) {
-            this.ws = new WebSocket('ws://127.0.0.1:1234');
-            this.ws.onopen = function () {
-                alert("连接成功");
-                _this.ws.send('tom');
-                alert("给服务端发送一个字符串：tom");
-            };
-            this.ws.onmessage = function (e) {
-                alert("收到服务端的消息：" + e.data);
-            };
-        } else {
-            alert('您得浏览器不支持WebSocket');
-        }
+        // if(WebSocket){
+        //     this.ws = new WebSocket('ws://127.0.0.1:1234');
+        //     this.ws.onopen = () => {
+        //         alert("连接成功");
+        //         // this.ws.send('tom');
+        //         // alert("给服务端发送一个字符串：tom");
+        //     };
+        //     this.ws.onmessage = function(e) {
+        //         alert("收到服务端的消息：" + e.data);
+        //     };
+        // }else{
+        //     alert('您得浏览器不支持WebSocket');
+        // }
         // setTimeos
         // ws = new WebSocket("ws://127.0.0.1:1234");
         // ws.onopen = function() {

@@ -7,6 +7,7 @@ use think\worker\Server;
 class Worker extends Server
 {
     protected $socket = 'websocket://127.0.0.1:1234';
+    protected $uidConnections = array();
 
     /**
      * 收到信息
@@ -15,7 +16,15 @@ class Worker extends Server
      */
     public function onMessage($connection, $data)
     {
-        $connection->send('我收到你的信息了');
+        // foreach($connection as $k => $v){
+        //     var_dump($v);
+        // }
+        // $mc = new \Memcache();
+        // $mc->connect('127.0.0.1', 11211);
+        // $name = $mc->get($connection->id);
+        // $mc->close();
+        // var_dump($name);
+        $connection->send('我收到你的信息了'+$connection->id);
     }
 
     /**
@@ -24,6 +33,17 @@ class Worker extends Server
      */
     public function onConnect($connection)
     {
+        //将用户添加到用户群列表中
+        $this->uidConnections[$connection->id] = $connection;
+        //每个用户发送用户列表
+        $this->broadcast(json_encode(['trigger' => 'updateUserList', 'data' => $this->getAllUid()]));
+        // foreach($connection as $k => $v){
+        //     var_dump($v);
+        // }
+        // $mc = new \Memcache();
+        // $mc->connect('127.0.0.1', 11211);
+        // $mc->set($connection->id, $connection->name);
+        // $mc->close();
 
     }
 
@@ -33,7 +53,10 @@ class Worker extends Server
      */
     public function onClose($connection)
     {
-
+        // foreach($connection as $k => $v){
+        //     var_dump($v);
+        // }
+        unset($this->uidConnections[$connection->id]);
     }
 
     /**
@@ -54,5 +77,41 @@ class Worker extends Server
     public function onWorkerStart($worker)
     {
 
+    }
+
+    
+    /**
+     * 向所有连接的用户推送消息
+     * @param $message
+     */
+    public function broadcast($message){
+        foreach($this->uidConnections as $connection){
+            $connection->send($message);
+        }
+    }
+
+    /**
+     * 指定uid推送数据
+     * @param $uid
+     * @param $message
+     */
+    public function sendByUid($uid, $message){
+        if(isset($this->uidConnections[$uid])){
+            $this->uidConnections[$uid]->send($message);
+        }
+    }
+
+    
+    /**
+     * 指定uid推送数据
+     * @param $uid
+     * @param $message
+     */
+    public function getAllUid(){
+        $array = array();
+        foreach($this->uidConnections as $connection){
+            $array[$connection->uid] = $connection->_remoteAddress;
+        }
+        return $array;
     }
 }

@@ -470,21 +470,37 @@ function checkLogin(user) {
     // sessionStorage.setItem('username', username)
     // sessionStorage.setItem('accessToken', token);
     // callback(flag);
+    // return new Promise((resolve, reject) => {
+    //     http.post(url + 'login/login', {username: user.username, password: user.password})
+    //     .then((data) => {
+    //         sessionStorage.setItem('username', user.username);
+    //         sessionStorage.setItem('accessToken', data.token);
+    //         resolve(data);
+    //     })
+    //     .catch((error) => {
+    //         reject(error)
+    //     });
+    // });
     return new _promise2.default(function (resolve, reject) {
-        _http2.default.post(url + 'login/login', { username: user.username, password: user.password }).then(function (data) {
+        if (!localStorage.getItem(user.username)) {
+            reject({ msg: '用户不存在！' });
+        } else if (localStorage.getItem(user.username) != user.password) {
+            reject({ msg: '密码错误！' });
+        } else {
             sessionStorage.setItem('username', user.username);
-            sessionStorage.setItem('accessToken', data.token);
-            resolve(data);
-        }).catch(function (error) {
-            reject(error);
-        });
+            resolve({ msg: '登录成功！' });
+        }
     });
 }
 
 function logout() {
     sessionStorage.removeItem('username');
-    sessionStorage.removeItem('accessToken');
-    _http2.default.post(url + 'login/outlogin').then(function (data) {}).catch(function (error) {});
+    // sessionStorage.removeItem('accessToken');
+    // http.post(url + 'login/outlogin')
+    // .then((data) => {
+    // })
+    // .catch((error) => {
+    // });
 }
 
 function register(user) {
@@ -508,10 +524,16 @@ function register(user) {
         // .catch((error) => {
         //     reject(error)
         // });
-        checkEmail(user.email).then(function (data) {
-            return checkUsername(user.username);
-        }).then(function (data) {
-            return _http2.default.post(url + 'register/register', { username: user.username, password: user.password, email: user.email });
+        checkUsername(user.username).then(function (data) {
+            // return http.post(url + 'register/register', {username: user.username, password: user.password, email: user.email});
+            return new _promise2.default(function (resolve, reject) {
+                try {
+                    localStorage.setItem(user.username, user.password);
+                    resolve({ msg: '注册成功！' });
+                } catch (e) {
+                    reject({ msg: e.message });
+                }
+            });
         }).then(function (data) {
             return resolve(data);
         }).catch(function (error) {
@@ -525,7 +547,16 @@ function checkEmail(email) {
 }
 
 function checkUsername(username) {
-    return _http2.default.post(url + 'register/verifyUserName', { username: username });
+    // return http.post(url + 'register/verifyUserName', {username: username});
+    return new _promise2.default(function (resolve, reject) {
+        if (localStorage.getItem(username)) {
+            reject({
+                msg: '该用户已注册！'
+            });
+        } else {
+            resolve();
+        }
+    });
 }
 exports.checkLogin = checkLogin;
 exports.logout = logout;
@@ -849,7 +880,7 @@ exports = module.exports = __webpack_require__(48)(undefined);
 
 
 // module
-exports.push([module.i, "\n.login-box[data-v-5253a5a5]{\n    position: fixed;\n    width: 100%;\n    height: 100%;\n    background: #efefef;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n}\n.head-area[data-v-5253a5a5]{\n    flex: 3;\n    height: 60%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.head-portrait[data-v-5253a5a5]{\n    width: 5rem;\n    height: 5rem;\n    border: 4px solid #3c3c94;\n    box-sizing: border-box;\n    border-radius: 2.5rem;\n}\n/* .title{\n} */\n.form-area[data-v-5253a5a5]{\n    flex: 5;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.form-box[data-v-5253a5a5]{\n    width: 320px;\n    padding: 0.5rem 0;\n    display: flex;\n}\n.input-normal[data-v-5253a5a5]{\n    width: 13rem;\n    line-height: 2rem;\n    padding: 0px 0.5rem;\n    border: none;\n    border-bottom: 2px solid #3c3c94;\n    background: transparent;\n    display: inline-flex;\n    float:left;\n}\n.bottom-normal[data-v-5253a5a5]{\n    color: #fff;\n    width: 14rem;\n    height: 2rem;\n    line-height: 2rem;\n    border: none;\n    background: #3c3c94;\n}\n.flex-center[data-v-5253a5a5]{\n    justify-content: center;\n}\n.btn-group[data-v-5253a5a5]{\n    display: block;\n    padding: 0;\n    width: 14rem;\n    height: 2rem;\n    border: 1px solid #3c3c94;\n    overflow: hidden;\n    margin-top: 1rem;\n}\n.btn-box[data-v-5253a5a5]{\n    width: 29rem;\n}\n.register[data-v-5253a5a5]{\n    width: 14rem;\n    height: 2rem;\n    margin-top: 1rem;\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n}\n.register-btn[data-v-5253a5a5]{\n    font-size: 1rem;\n    line-height: 1rem;\n    display: inline-block;\n    color: #3c3c94;\n}\n.arrow[data-v-5253a5a5]{\n    padding-left: 0.5rem;\n}\n.arrow[data-v-5253a5a5]:after {\n    content: \" \";\n    display: inline-block;\n    height: 0.4rem;\n    width: 0.4rem;\n    border-width: 2px 2px 0 0;\n    border-color: #3c3c94;\n    border-style: solid;\n    transform: rotate(45deg);\n}\n.clear-btn[data-v-5253a5a5]{\n    background: transparent;\n    border: none;\n    height: 1rem;\n    display: flex;\n}\ninput[data-v-5253a5a5]:-webkit-autofill {\n    -webkit-box-shadow: 0 0 0px 1000px #efefef inset !important;\n    -webkit-text-fill-color: none!important;\n}\n", ""]);
+exports.push([module.i, "\n.login-box[data-v-5253a5a5]{\n    position: fixed;\n    width: 100%;\n    height: 100%;\n    background: #efefef;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n}\n.head-area[data-v-5253a5a5]{\n    flex: 3;\n    height: 60%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.head-portrait[data-v-5253a5a5]{\n    width: 5rem;\n    height: 5rem;\n    border: 4px solid #3c3c94;\n    box-sizing: border-box;\n    border-radius: 2.5rem;\n}\n/* .title{\n} */\n.form-area[data-v-5253a5a5]{\n    flex: 5;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.form-box[data-v-5253a5a5]{\n    width: 320px;\n    padding: 0.5rem 0;\n    display: flex;\n}\n.input-normal[data-v-5253a5a5]{\n    font-size: 1rem;\n    width: 13rem;\n    line-height: 2rem;\n    padding: 0px 0.5rem;\n    border: none;\n    border-bottom: 2px solid #3c3c94;\n    background: transparent;\n    display: inline-flex;\n    float:left;\n}\n.bottom-normal[data-v-5253a5a5]{\n    color: #fff;\n    width: 14rem;\n    height: 2rem;\n    line-height: 2rem;\n    border: none;\n    background: #3c3c94;\n}\n.flex-center[data-v-5253a5a5]{\n    justify-content: center;\n}\n.btn-group[data-v-5253a5a5]{\n    display: block;\n    padding: 0;\n    width: 14rem;\n    height: 2rem;\n    border: 1px solid #3c3c94;\n    overflow: hidden;\n    margin-top: 1rem;\n}\n.btn-box[data-v-5253a5a5]{\n    width: 29rem;\n}\n.register[data-v-5253a5a5]{\n    width: 14rem;\n    height: 2rem;\n    margin-top: 1rem;\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n}\n.register-btn[data-v-5253a5a5]{\n    font-size: 1rem;\n    line-height: 1rem;\n    display: inline-block;\n    color: #3c3c94;\n}\n.arrow[data-v-5253a5a5]{\n    padding-left: 0.5rem;\n}\n.arrow[data-v-5253a5a5]:after {\n    content: \" \";\n    display: inline-block;\n    height: 0.4rem;\n    width: 0.4rem;\n    border-width: 2px 2px 0 0;\n    border-color: #3c3c94;\n    border-style: solid;\n    transform: rotate(45deg);\n}\n.clear-btn[data-v-5253a5a5]{\n    background: transparent;\n    border: none;\n    height: 1rem;\n    display: flex;\n}\ninput[data-v-5253a5a5]:-webkit-autofill {\n    -webkit-box-shadow: 0 0 0px 1000px #efefef inset !important;\n    -webkit-text-fill-color: none!important;\n}\n", ""]);
 
 // exports
 
@@ -874,6 +905,7 @@ var _myModal2 = _interopRequireDefault(_myModal);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
 //
 //
 //

@@ -5,7 +5,9 @@ use think\Controller;
 class Index extends Controller{
     public function index()
     {
-            return $this->view->fetch();
+        $mc = new \Memcache();
+        $mc->connect('127.0.0.1', '11211');
+        return $this->view->fetch();
     }
 
 }

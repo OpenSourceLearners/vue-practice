@@ -16434,9 +16434,10 @@ var myRouter = new _vueRouter2.default({
 });
 
 myRouter.beforeEach(function (to, from, next) {
+    // if(!to.matched.some(record => record.meta.noAuth) && !sessionStorage.getItem('accessToken') && sessionStorage.getItem('accessToken') == undefined){
     if (!to.matched.some(function (record) {
         return record.meta.noAuth;
-    }) && !sessionStorage.getItem('accessToken') && sessionStorage.getItem('accessToken') == undefined) {
+    }) && !sessionStorage.getItem('username') && sessionStorage.getItem('username') == undefined) {
         next({
             path: '/login'
         });

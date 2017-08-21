@@ -43,7 +43,8 @@ var myRouter =  new Router({
 });
 
 myRouter.beforeEach((to, from, next) => {
-    if(!to.matched.some(record => record.meta.noAuth) && !sessionStorage.getItem('accessToken') && sessionStorage.getItem('accessToken') == undefined){
+    // if(!to.matched.some(record => record.meta.noAuth) && !sessionStorage.getItem('accessToken') && sessionStorage.getItem('accessToken') == undefined){
+        if(!to.matched.some(record => record.meta.noAuth) && !sessionStorage.getItem('username') && sessionStorage.getItem('username') == undefined){
         next({
             path: '/login',
         });

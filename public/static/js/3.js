@@ -7,7 +7,7 @@ webpackJsonp([3],{
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_content_vue__ = __webpack_require__(176);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_content_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_content_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_51c1a91f_hasScoped_false_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_content_vue__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_51c1a91f_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_content_vue__ = __webpack_require__(177);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -21,12 +21,12 @@ var normalizeComponent = __webpack_require__(126)
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-51c1a91f"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_content_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_51c1a91f_hasScoped_false_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_content_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_51c1a91f_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_content_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
@@ -420,13 +420,13 @@ var content = __webpack_require__(175);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(125)("550ee09e", content, false);
+var update = __webpack_require__(125)("09020364", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-51c1a91f\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./content.vue", function() {
-     var newContent = require("!!../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-51c1a91f\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./content.vue");
+   module.hot.accept("!!../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-51c1a91f\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./content.vue", function() {
+     var newContent = require("!!../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-51c1a91f\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./content.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -445,7 +445,7 @@ exports = module.exports = __webpack_require__(48)(undefined);
 
 
 // module
-exports.push([module.i, "\n.hide-box{\n    overflow: hidden;\n}\n.content-box{\n    width: 300%;\n    display: flex;\n    position: relative;\n}\n.page-item{\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n}\n", ""]);
+exports.push([module.i, "\n.hide-box[data-v-51c1a91f]{\n    overflow: hidden;\n    border-top: 1px solid #efefef;\n    border-bottom: 1px solid #efefef;\n}\n.content-box[data-v-51c1a91f]{\n    width: 300%;\n    display: flex;\n    position: relative;\n}\n.page-item[data-v-51c1a91f]{\n    width: 100%;\n    height: 100%;\n}\n.chat-list[data-v-51c1a91f]{\n    padding: 0.5rem 0.5rem;\n}\n.chat-list-item[data-v-51c1a91f]{\n    border-bottom: 1px solid #efefef;\n    display: flex;\n    height: 3rem;\n    padding: 0.5rem;\n}\n.chat-list-item[data-v-51c1a91f]:last-child{\n    border-bottom: none;\n}\n.head-portrait[data-v-51c1a91f]{\n    width: 3rem;\n    height: 3rem;\n    -moz-border-radius: 2rem;\n    -webkit-border-radius: 2rem;\n    border-radius: 2rem;\n}\n.description[data-v-51c1a91f]{\n    flex: 1;\n    display: flex;\n    padding-left: 1rem;\n    flex-direction: column;\n    position: relative;\n}\n.description .name[data-v-51c1a91f]{\n    color: #333;\n    font-weight: bold;\n    font-size: 1rem;\n    font-weight: 1rem;\n}\n.description .message[data-v-51c1a91f]{\n    flex: 1;\n    color: #999;\n    font-size: 0.6rem;\n    line-height: 1.5rem;\n}\n.description .date[data-v-51c1a91f]{\n    position: absolute;\n    right: 0;\n    top: 0.3rem;\n}\n.my-information[data-v-51c1a91f]{\n    display: flex;\n    flex-direction: column;\n}\n.my-head-portrait[data-v-51c1a91f]{\n    width: 5rem;\n    height: 5rem;-moz-border-radius: 5rem;\n    -webkit-border-radius: 5rem;\n    border-radius: 5rem;\n    background: #000;\n    margin: 2rem auto;\n}\n.my-username[data-v-51c1a91f]{\n    text-align: center;\n    font-size: 1.5rem;\n    font-weight: bold;\n}\n", ""]);
 
 // exports
 
@@ -491,6 +491,78 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     name: 'content',
@@ -503,11 +575,37 @@ exports.default = {
     },
     data: function data() {
         return {
-            index: this.value
+            index: this.value,
+            chatList: [{
+                name: '张三',
+                message: '你好！',
+                color: 'rgba(0, 255, 139, 0.73)',
+                date: '21:44'
+
+            }, {
+                name: '李四',
+                message: '快下来！！！',
+                color: '#36e2cc',
+                date: '21:35'
+            }, {
+                name: '王五',
+                message: '在干嘛呢',
+                color: 'rgba(0, 0, 0, 0.73)',
+                date: '21:19'
+            }, {
+                name: '王五',
+                message: '在干嘛呢',
+                color: 'rgba(0, 0, 0, 0.73)',
+                date: '21:19'
+            }]
         };
     },
 
-    computed: {},
+    computed: {
+        username: function username() {
+            return sessionStorage.getItem('username');
+        }
+    },
     watch: {
         value: function value(newVal, oldVal) {
             this.index = newVal;
@@ -538,17 +636,37 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     })
   }, [_c('section', {
     staticClass: "page-item"
-  }, [_vm._t("default", [_vm._v("1")], {
-    slot: "page1"
-  })], 2), _vm._v(" "), _c('section', {
+  }, [_c('div', {
+    staticClass: "chat-list"
+  }, _vm._l((_vm.chatList), function(item, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "chat-list-item"
+    }, [_c('p', {
+      staticClass: "head-portrait",
+      style: ({
+        'background': item.color
+      })
+    }), _vm._v(" "), _c('p', {
+      staticClass: "description"
+    }, [_c('span', {
+      staticClass: "name"
+    }, [_vm._v(_vm._s(item.name))]), _vm._v(" "), _c('span', {
+      staticClass: "message"
+    }, [_vm._v(_vm._s(item.message))]), _vm._v(" "), _c('span', {
+      staticClass: "date"
+    }, [_vm._v(_vm._s(item.date))])])])
+  }))]), _vm._v(" "), _c('section', {
     staticClass: "page-item"
-  }, [_vm._t("default", [_vm._v("2")], {
-    slot: "pagw2"
-  })], 2), _vm._v(" "), _c('section', {
+  }), _vm._v(" "), _c('section', {
     staticClass: "page-item"
-  }, [_vm._t("default", [_vm._v("3")], {
-    slot: "page3"
-  })], 2)])])
+  }, [_c('div', {
+    staticClass: "my-information"
+  }, [_c('p', {
+    staticClass: "my-head-portrait"
+  }), _vm._v(" "), _c('p', {
+    staticClass: "my-username"
+  }, [_vm._v(_vm._s(_vm.username))])])])])])
 }
 var staticRenderFns = []
 render._withStripped = true

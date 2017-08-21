@@ -76,6 +76,7 @@
         display: flex;
     }
     .input-normal{
+        font-size: 1rem;
         width: 13rem;
         line-height: 2rem;
         padding: 0px 0.5rem;
@@ -200,8 +201,8 @@
                 checkLogin(this.user)
                 .then(() => {
                     this.$router.push({path: '/home'});
-                }).
-                catch((error) => {
+                })
+                .catch((error) => {
                     this.showModal({
                         title: '提示',
                         content: error.msg,
