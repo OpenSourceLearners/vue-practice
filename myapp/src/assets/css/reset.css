@@ -22,3 +22,6 @@ input:-webkit-autofill {
 input:focus, button:focus{
     outline: none;
 }
+html, body{
+    height: 100%;
+}

@@ -904,7 +904,7 @@ exports = module.exports = __webpack_require__(48)(undefined);
 
 
 // module
-exports.push([module.i, "\n.home-box[data-v-e4ec756a]{\n    height: 100%;\n}\n.main[data-v-e4ec756a]{\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    overflow: hidden;\n}\n.content[data-v-e4ec756a]{\n    flex: 1;\n    overflow: hidden;\n}\n", ""]);
+exports.push([module.i, "\n.main[data-v-e4ec756a]{\n    position: fixed;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n}\n.content[data-v-e4ec756a]{\n    flex: 1;\n    overflow: hidden;\n}\n", ""]);
 
 // exports
 
@@ -980,9 +980,6 @@ exports.default = {
     destroyed: function destroyed() {},
     mounted: function mounted() {}
 }; //
-//
-//
-//
 //
 //
 //

@@ -9,13 +9,16 @@
     </div>
 </template>
 <style scoped>
+    .home-box{
+        height: 100%;
+    }
     .main{
-        position: fixed;
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        overflow: hidden;
     }
     .content{
         flex: 1;

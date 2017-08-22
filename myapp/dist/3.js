@@ -5,13 +5,13 @@ webpackJsonp([3],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_content_vue__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_content_vue__ = __webpack_require__(176);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_content_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_content_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_51c1a91f_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_content_vue__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_51c1a91f_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_content_vue__ = __webpack_require__(177);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(176)
+  __webpack_require__(174)
 }
 var normalizeComponent = __webpack_require__(126)
 /* script */
@@ -410,13 +410,13 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 176:
+/***/ 174:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(177);
+var content = __webpack_require__(175);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -437,7 +437,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 177:
+/***/ 175:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(48)(undefined);
@@ -445,14 +445,14 @@ exports = module.exports = __webpack_require__(48)(undefined);
 
 
 // module
-exports.push([module.i, "\n.content-box[data-v-51c1a91f]{\n    /* overflow: hidden; */\n    border-top: 1px solid #efefef;\n    border-bottom: 1px solid #efefef;\n    width: 300%;\n    height: 100%;\n    display: flex;\n    position: relative;\n}\n.page-item[data-v-51c1a91f]{\n    overflow: hidden;\n    width: 100%;\n    height: 100%;\n}\n.chat-list[data-v-51c1a91f]{\n    width: 100%;\n    height: 100%;\n    overflow-x: hidden;\n    overflow-y: scroll;\n    padding-right: 16px;\n}\n.chat-list-item-box[data-v-51c1a91f]{\n    width: 100%;\n    height: 4rem;\n    border-bottom: 1px solid #efefef;\n}\n.chat-list-item[data-v-51c1a91f]{\n    width: 100%;\n    display: flex;\n    height: 4rem;\n    padding-bottom: 16px;\n    overflow-y:hidden;\n    overflow-y:hidden;\n    overflow-x:scroll;\n}\n.chat-hide-box[data-v-51c1a91f]{\n    height: 4rem;\n    overflow: hidden;\n}\n.chat-list-item-box[data-v-51c1a91f]:last-child{\n    border-bottom: none;\n}\n.delete-box[data-v-51c1a91f]{\n    width: 4rem;\n    margin-right: -4.5rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.delete-btn[data-v-51c1a91f]{\n    width: 1.8rem;\n    height: 1.8rem;\n    border-radius: 1rem;\n    background: #ddd;\n    position: relative;\n}\n.head-portrait[data-v-51c1a91f]{\n    width: 3rem;\n    height: 3rem;\n    margin: 0.5rem;\n    -moz-border-radius: 2rem;\n    -webkit-border-radius: 2rem;\n    border-radius: 2rem;\n}\n.description[data-v-51c1a91f]{\n    flex: 1;\n    display: flex;\n    padding: 0.5rem;\n    flex-direction: column;\n    position: relative;\n}\n.description .name[data-v-51c1a91f]{\n    color: #333;\n    font-weight: bold;\n    font-size: 1rem;\n    font-weight: 1rem;\n}\n.description .message[data-v-51c1a91f]{\n    flex: 1;\n    color: #999;\n    font-size: 0.6rem;\n    line-height: 1.5rem;\n}\n.description .date[data-v-51c1a91f]{\n    position: absolute;\n    right: 1rem;\n    top: 0.8rem;\n}\n.my-information[data-v-51c1a91f]{\n    display: flex;\n    flex-direction: column;\n}\n.my-head-portrait[data-v-51c1a91f]{\n    width: 5rem;\n    height: 5rem;-moz-border-radius: 5rem;\n    -webkit-border-radius: 5rem;\n    border-radius: 5rem;\n    background: #000;\n    margin: 2rem auto;\n}\n.my-username[data-v-51c1a91f]{\n    text-align: center;\n    font-size: 1.5rem;\n    font-weight: bold;\n}\n.delete-line-1[data-v-51c1a91f]{\n    display: block;\n    width: 1.0rem;\n    height: 0.2rem;\n    background: #fff;\n    position: absolute;\n    top: 0;\n    right: 0;\n    left: 0;\n    bottom: 0;\n    margin: auto;\n    transform:rotate(45deg);\n}\n.delete-line-2[data-v-51c1a91f]{\n    display: block;\n    width: 1.0rem;\n    height: 0.2rem;\n    background: #fff;\n    position: absolute;\n    top: 0;\n    right: 0;\n    left: 0;\n    bottom: 0;\n    margin: auto;\n    transform:rotate(-45deg);\n}\n", ""]);
+exports.push([module.i, "\n.hide-box[data-v-51c1a91f]{\n    overflow: hidden;\n    border-top: 1px solid #efefef;\n    border-bottom: 1px solid #efefef;\n}\n.content-box[data-v-51c1a91f]{\n    width: 300%;\n    display: flex;\n    position: relative;\n}\n.page-item[data-v-51c1a91f]{\n    width: 100%;\n    height: 100%;\n}\n.chat-list[data-v-51c1a91f]{\n    padding: 0.5rem 0.5rem;\n}\n.chat-list-item[data-v-51c1a91f]{\n    border-bottom: 1px solid #efefef;\n    display: flex;\n    height: 3rem;\n    padding: 0.5rem;\n}\n.chat-list-item[data-v-51c1a91f]:last-child{\n    border-bottom: none;\n}\n.head-portrait[data-v-51c1a91f]{\n    width: 3rem;\n    height: 3rem;\n    -moz-border-radius: 2rem;\n    -webkit-border-radius: 2rem;\n    border-radius: 2rem;\n}\n.description[data-v-51c1a91f]{\n    flex: 1;\n    display: flex;\n    padding-left: 1rem;\n    flex-direction: column;\n    position: relative;\n}\n.description .name[data-v-51c1a91f]{\n    color: #333;\n    font-weight: bold;\n    font-size: 1rem;\n    font-weight: 1rem;\n}\n.description .message[data-v-51c1a91f]{\n    flex: 1;\n    color: #999;\n    font-size: 0.6rem;\n    line-height: 1.5rem;\n}\n.description .date[data-v-51c1a91f]{\n    position: absolute;\n    right: 0;\n    top: 0.3rem;\n}\n.my-information[data-v-51c1a91f]{\n    display: flex;\n    flex-direction: column;\n}\n.my-head-portrait[data-v-51c1a91f]{\n    width: 5rem;\n    height: 5rem;-moz-border-radius: 5rem;\n    -webkit-border-radius: 5rem;\n    border-radius: 5rem;\n    background: #000;\n    margin: 2rem auto;\n}\n.my-username[data-v-51c1a91f]{\n    text-align: center;\n    font-size: 1.5rem;\n    font-weight: bold;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 178:
+/***/ 176:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -461,71 +461,6 @@ exports.push([module.i, "\n.content-box[data-v-51c1a91f]{\n    /* overflow: hidd
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -645,94 +580,24 @@ exports.default = {
                 name: '张三',
                 message: '你好！',
                 color: 'rgba(0, 255, 139, 0.73)',
-                date: '21:44',
-                left: 0
+                date: '21:44'
+
             }, {
                 name: '李四',
                 message: '快下来！！！',
                 color: '#36e2cc',
-                date: '21:35',
-                left: 0
+                date: '21:35'
             }, {
                 name: '王五',
                 message: '在干嘛呢',
                 color: 'rgba(0, 0, 0, 0.73)',
-                date: '21:19',
-                left: 0
+                date: '21:19'
             }, {
                 name: '王五',
                 message: '在干嘛呢',
                 color: 'rgba(0, 0, 0, 0.73)',
-                date: '21:19',
-                left: 0
-            }, {
-                name: '张三',
-                message: '你好！',
-                color: 'rgba(0, 255, 139, 0.73)',
-                date: '21:44',
-                left: 0
-            }, {
-                name: '张三',
-                message: '你好！',
-                color: 'rgba(0, 255, 139, 0.73)',
-                date: '21:44',
-                left: 0
-            }, {
-                name: '李四',
-                message: '快下来！！！',
-                color: '#36e2cc',
-                date: '21:35',
-                left: 0
-            }, {
-                name: '王五',
-                message: '在干嘛呢',
-                color: 'rgba(0, 0, 0, 0.73)',
-                date: '21:19',
-                left: 0
-            }, {
-                name: '王五',
-                message: '在干嘛呢',
-                color: 'rgba(0, 0, 0, 0.73)',
-                date: '21:19',
-                left: 0
-            }, {
-                name: '张三',
-                message: '你好！',
-                color: 'rgba(0, 255, 139, 0.73)',
-                date: '21:44',
-                left: 0
-            }, {
-                name: '张三',
-                message: '你好！',
-                color: 'rgba(0, 255, 139, 0.73)',
-                date: '21:44',
-                left: 0
-            }, {
-                name: '李四',
-                message: '快下来！！！',
-                color: '#36e2cc',
-                date: '21:35',
-                left: 0
-            }, {
-                name: '王五',
-                message: '在干嘛呢',
-                color: 'rgba(0, 0, 0, 0.73)',
-                date: '21:19',
-                left: 0
-            }, {
-                name: '王五',
-                message: '在干嘛呢',
-                color: 'rgba(0, 0, 0, 0.73)',
-                date: '21:19',
-                left: 0
-            }, {
-                name: '张三',
-                message: '你好！',
-                color: 'rgba(0, 255, 139, 0.73)',
-                date: '21:44',
-                left: 0
-            }],
-            startX: 0
+                date: '21:19'
+            }]
         };
     },
 
@@ -749,18 +614,7 @@ exports.default = {
             this.$emit('input', newVal);
         }
     },
-    methods: {
-        //删除聊天记录项
-        deleteItem: function deleteItem(index) {
-            this.chatList.splice(index, 1);
-        },
-        slideStart: function slideStart(event, index) {
-            console.log(event);
-            console.log(index);
-        },
-        slideMove: function slideMove(event, index) {},
-        slideEnd: function slideEnd(event) {}
-    },
+    methods: {},
     created: function created() {},
     destroyed: function destroyed() {},
     mounted: function mounted() {}
@@ -768,12 +622,14 @@ exports.default = {
 
 /***/ }),
 
-/***/ 179:
+/***/ 177:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('article', {
+    staticClass: "hide-box"
+  }, [_c('div', {
     staticClass: "content-box",
     style: ({
       left: -_vm.index * 100 + '%'
@@ -783,12 +639,8 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   }, [_c('div', {
     staticClass: "chat-list"
   }, _vm._l((_vm.chatList), function(item, index) {
-    return _c('section', {
+    return _c('div', {
       key: index,
-      staticClass: "chat-list-item-box"
-    }, [_c('div', {
-      staticClass: "chat-hide-box"
-    }, [_c('div', {
       staticClass: "chat-list-item"
     }, [_c('p', {
       staticClass: "head-portrait",
@@ -803,20 +655,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       staticClass: "message"
     }, [_vm._v(_vm._s(item.message))]), _vm._v(" "), _c('span', {
       staticClass: "date"
-    }, [_vm._v(_vm._s(item.date))])]), _vm._v(" "), _c('div', {
-      staticClass: "delete-box"
-    }, [_c('div', {
-      staticClass: "delete-btn",
-      on: {
-        "click": function($event) {
-          _vm.deleteItem(index)
-        }
-      }
-    }, [_c('span', {
-      staticClass: "delete-line-1"
-    }), _vm._v(" "), _c('span', {
-      staticClass: "delete-line-2"
-    })])])])])])
+    }, [_vm._v(_vm._s(item.date))])])])
   }))]), _vm._v(" "), _c('section', {
     staticClass: "page-item"
   }), _vm._v(" "), _c('section', {
@@ -827,7 +666,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "my-head-portrait"
   }), _vm._v(" "), _c('p', {
     staticClass: "my-username"
-  }, [_vm._v(_vm._s(_vm.username))])])])])
+  }, [_vm._v(_vm._s(_vm.username))])])])])])
 }
 var staticRenderFns = []
 render._withStripped = true

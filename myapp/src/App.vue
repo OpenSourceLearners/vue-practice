@@ -7,6 +7,7 @@
 </template>
 <style scoped>
     .app-box{
+        height: 100%;
         min-width: 320px;
     }
     .left-slide-fade-active, .left-slide-fade-leave-active{

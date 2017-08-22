@@ -4,7 +4,7 @@
             <!-- 标题 -->
             <!-- <h1 class="title">Login</h1> -->
             <!-- 标题 -->
-            <div class="head-portrait"></div>
+            <div class="head-portrait" :style="'background-image: url('+loginImg+')'"></div>
         </div>
 
         <!-- 表单域 -->
@@ -57,10 +57,13 @@
     }
     .head-portrait{
         width: 5rem;
-        height: 5rem;
-        border: 4px solid #3c3c94;
+        height: 6rem;
+        /* border: 4px solid #3c3c94; */
         box-sizing: border-box;
-        border-radius: 2.5rem;
+        /* border-radius: 2.5rem; */
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: center center;
     }
     /* .title{
     } */
@@ -150,6 +153,8 @@
 <script>
     import {checkLogin} from '../lib/user';
     import myModal from '../components/myModal';
+    import loginImg from '../assets/images/content/login.png';
+    import registerImg from '../assets/images/content/register.jpg';
     export default {
         name: 'login',
         components: {
@@ -171,7 +176,8 @@
                     type: 1,
                     show: false,
                 },
-
+                loginImg,
+                registerImg
             };
         },
         computed: {
