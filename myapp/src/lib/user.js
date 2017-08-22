@@ -38,37 +38,37 @@ function checkLogin(user){
     // sessionStorage.setItem('username', username)
     // sessionStorage.setItem('accessToken', token);
     // callback(flag);
-    // return new Promise((resolve, reject) => {
-    //     http.post(url + 'login/login', {username: user.username, password: user.password})
-    //     .then((data) => {
-    //         sessionStorage.setItem('username', user.username);
-    //         sessionStorage.setItem('accessToken', data.token);
-    //         resolve(data);
-    //     })
-    //     .catch((error) => {
-    //         reject(error)
-    //     });
-    // });
     return new Promise((resolve, reject) => {
-        if(!localStorage.getItem(user.username)){
-            reject({msg: '用户不存在！'});
-        }else if(localStorage.getItem(user.username) != user.password){
-            reject({msg: '密码错误！'});
-        }else{
+        http.post(url + 'login/login', {username: user.username, password: user.password})
+        .then((data) => {
             sessionStorage.setItem('username', user.username);
-            resolve({msg: '登录成功！'});
-        }
+            sessionStorage.setItem('accessToken', data.token);
+            resolve(data);
+        })
+        .catch((error) => {
+            reject(error)
+        });
     });
+    // return new Promise((resolve, reject) => {
+    //     if(!localStorage.getItem(user.username)){
+    //         reject({msg: '用户不存在！'});
+    //     }else if(localStorage.getItem(user.username) != user.password){
+    //         reject({msg: '密码错误！'});
+    //     }else{
+    //         sessionStorage.setItem('username', user.username);
+    //         resolve({msg: '登录成功！'});
+    //     }
+    // });
 }
 
 function logout(){
     sessionStorage.removeItem('username');
-    // sessionStorage.removeItem('accessToken');
-    // http.post(url + 'login/outlogin')
-    // .then((data) => {
-    // })
-    // .catch((error) => {
-    // });
+    sessionStorage.removeItem('accessToken');
+    http.post(url + 'login/outlogin')
+    .then((data) => {
+    })
+    .catch((error) => {
+    });
 }   
 
 function register(user){
@@ -92,17 +92,20 @@ function register(user){
         // .catch((error) => {
         //     reject(error)
         // });
-        checkUsername(user.username)
+        checkEmail(user.email)
         .then((data) => {
-            // return http.post(url + 'register/register', {username: user.username, password: user.password, email: user.email});
-            return new Promise((resolve, reject) => {
-                try{
-                    localStorage.setItem(user.username, user.password);
-                    resolve({msg: '注册成功！'});
-                }catch(e){
-                    reject({msg: e.message});
-                }
-            });
+            return checkUsername(user.username);
+        })
+        .then((data) => {
+            return http.post(url + 'register/register', {username: user.username, password: user.password, email: user.email});
+            // return new Promise((resolve, reject) => {
+            //     try{
+            //         localStorage.setItem(user.username, user.password);
+            //         resolve({msg: '注册成功！'});
+            //     }catch(e){
+            //         reject({msg: e.message});
+            //     }
+            // });
         })
         .then((data) => {
             return resolve(data);
@@ -118,16 +121,16 @@ function checkEmail(email){
 }
 
 function checkUsername(username){
-    // return http.post(url + 'register/verifyUserName', {username: username});
-    return new Promise((resolve, reject) => {
-        if(localStorage.getItem(username)){
-            reject({
-                msg: '该用户已注册！',
-            });
-        }else{
-            resolve();
-        }
-    });
+    return http.post(url + 'register/verifyUserName', {username: username});
+    // return new Promise((resolve, reject) => {
+    //     if(localStorage.getItem(username)){
+    //         reject({
+    //             msg: '该用户已注册！',
+    //         });
+    //     }else{
+    //         resolve();
+    //     }
+    // });
 }
 export {
     checkLogin,

@@ -9,7 +9,7 @@ const App = resolve => require(['../App'], resolve);
 const home = resolve => require(['../views/home/home'], resolve);
 const login = resolve => require(['../views/login'], resolve);
 const register = resolve => require(['../views/register'], resolve);
-// const datePicker = resolve => require(['../views/datePicker/datePickerTest'], resolve);
+const datePicker = resolve => require(['../views/content/datePickerTest'], resolve);
 const content = resolve => require(['../views/content/content'], resolve);
 
 // const App = resolve => require.ensure(['../App.vue'], () => resoleve(require('../App.vue')));
@@ -31,6 +31,10 @@ var myRouter =  new Router({
                         {
                             path:'',
                             component: content
+                        },
+                        {
+                            path: 'datePicker',
+                            component: datePicker
                         }
                     ],
                 },

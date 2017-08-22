@@ -16,9 +16,9 @@
                     'left': isLogin ? '0.2rem' : '6.8rem',
                 }"></div>
             </div> -->
-            <!-- <div class="form-box flex-center">
+            <div class="form-box flex-center">
                 <input type="text" v-model="user.email" placeholder="请输入电子邮箱" class="input-normal" id="email" />
-            </div> -->
+            </div>
             <div class="form-box flex-center">
                 <input type="text" v-model="user.username" placeholder="请输入用户名" class="input-normal" id="username" />
             </div>
@@ -185,7 +185,7 @@
         methods: {
             //注册
             register(){
-                if(this.user.username == '' || this.user.password == ''){
+                if(this.user.email == '' || this.user.username == '' || this.user.password == ''){
                     this.showModal({
                         title: '提示',
                         content: '用户名和密码和邮箱不能为空！',

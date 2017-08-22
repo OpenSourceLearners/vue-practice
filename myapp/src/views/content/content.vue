@@ -2,7 +2,7 @@
     <article class="content-box" :style="{left: -index*100+'%'}">
         <section class="page-item">
             <div class="chat-list">
-                <section v-for="(item, index) in chatList" :key="index" class="chat-list-item-box">
+                <!-- <section v-for="(item, index) in chatList" :key="index" class="chat-list-item-box">
                     <div class="chat-hide-box">
                         <div class="chat-list-item">
                             <p class="head-portrait" :style="{'background': item.color}"></p>
@@ -19,7 +19,23 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
+                <div>
+                    请选择和谁聊天
+                    <select v-model="send.Uid">
+                        <option v-for="(item, index) in onLineUserList" :key="index" :value="index">{{item}}</option>
+                    </select>
+                </div>
+                <ul class="chat-record">
+                    <li v-for="(item, index) in chatRecord" :key="index">
+                        <span class="send-user">{{item.user}}:</span>
+                        <p class="chat-message">{{item.message}}</p>
+                    </li>
+                </ul>
+                <div>
+                    <textarea v-model="send.message"></textarea>
+                    <input type="button" value="发送" @click="sendMsg" />
+                </div>
             </div>
         </section>
         <section class="page-item">
@@ -33,6 +49,34 @@
     </article>
 </template>
 <style scoped>
+    .chat-record {
+        border: 1px solid #000;
+        padding: 0;
+        height: 80%;
+    }
+    .chat-record li{
+        list-style: none;
+        /* padding: 0.5rem; */
+        min-height: 2rem;
+        display: flex;
+    }
+    .send-user{
+        font-size: 1rem;
+        font-weight: bold;
+        height: 2rem;
+        line-height: 2rem;
+        display: inline-block;
+        padding: 0 1rem;
+    }
+    .chat-message{
+        font-size: 0.6rem;
+        line-height: 1.2rem;
+        display: inline-block;
+        padding: 0.5rem;
+    }
+
+    
+
     .content-box{
         /* overflow: hidden; */
         border-top: 1px solid #efefef;
@@ -285,12 +329,33 @@
                     },
                 ],
                 startX: 0,
+                userList: [],
+                chatRecord: [
+                ],
+                send:{
+                    Uid: 0,
+                    message: '',
+                },
+                user:{
+                    Uid: undefined,
+                    name: undefined,
+                }
             };
         },
         computed: {
             username(){
                 return sessionStorage.getItem('username');
             },
+            onLineUserList(){
+                for(let i in this.userList){
+                    if(i == this.user.Uid){
+                        console.log(this.userList);
+                        delete this.userList[i];
+                        break;
+                    }
+                }
+                return this.userList;
+            }
         },
         watch: {
             value(newVal, oldVal){
@@ -305,18 +370,66 @@
             deleteItem(index){
                 this.chatList.splice(index, 1);
             },
-            slideStart(event, index){
-                console.log(event);
-                console.log(index);
-            },
-            slideMove(event, index){
+            // slideStart(event, index){
+            // },
+            // slideMove(event, index){
 
-            },
-            slideEnd(event){
+            // },
+            // slideEnd(event){
 
+            // },
+            //发送信息
+            sendMsg(){
+                if(this.send.message == ''){
+                    alert('信息不能为空');
+                    return ;
+                }
+                this.ws.send(JSON.stringify({
+                    method: 'sendMsg',
+                    data: this.send
+                }));
+                this.chatRecord.push({
+                    user: this.user.name,
+                    message: this.send.message,
+                });
+                this.send.message = '';
             }
         },
         created() {
+            if(WebSocket){
+                this.ws = new WebSocket('ws://127.0.0.1:1234');
+                this.ws.onopen = () => {
+                    // alert("连接成功");
+                    // this.ws.send('tom');
+                    // alert("给服务端发送一个字符串：tom");
+                };
+                this.ws.onmessage = (e) => {
+                    // alert("收到服务端的消息：" + e.data);
+                    var data = JSON.parse(e.data);
+                    switch(data.trigger){
+                        case 'updateUserList':
+                            this.userList = data.data;
+                        break;
+                        case 'acceptMsg':
+                            data = data.data;
+                            this.chatRecord.push({
+                                user: data.sendUser,
+                                message: data.message,
+                                date: data.date
+                            });
+                        break;
+                        case 'setUid':
+                            this.user.Uid = data.data.Uid;
+                            this.user.name = data.data.name;
+                        break;
+                        case 'Error':
+                            alert(data.message);
+                        break;
+                    }
+                };
+            }else{
+                alert('您得浏览器不支持WebSocket');
+            }
         },
         destroyed() {
         },

@@ -7,7 +7,6 @@ use think\worker\Server;
 class Worker extends Server
 {
     protected $socket = 'websocket://127.0.0.1:1234';
-    protected $uidConnections = array();
 
     /**
      * 收到信息
@@ -24,7 +23,38 @@ class Worker extends Server
         // $name = $mc->get($connection->id);
         // $mc->close();
         // var_dump($name);
-        $connection->send('我收到你的信息了'+$connection->id);
+        // $connection->send('我收到你的信息了'+$connection->id);
+        try{
+            $data = json_decode($data, true);
+            if(!isset($data['method'])){
+                throw new \Exception('没有请求的方法参数！');
+            }
+            switch($data['method']){
+                case 'sendMsg':
+                    // var_dump($this->worker->connections);
+                    $data = $data['data'];
+                    if(!isset($data['message']) || !isset($data['Uid'])){
+                        throw new \Exception('没有用户id或者信息');
+                    }
+                    if(!$this->sendByUid($data['Uid'],[
+                        'trigger'=>'acceptMsg',
+                        'data'=> [
+                            'message'=> $data['message'],
+                            'sendUser'=> $connection->id.'--'.$connection->getRemoteIp(),
+                            'date'=>date("h:i:sa")
+                        ]
+                    ])){
+                        throw new \Exception('用户不在线！');
+                    }
+                break;
+            }
+        }catch(\Exception $e){
+            $connection->send(json_encode([
+                'trigger' => 'Error',
+                'message' => $e->getMessage(),
+            ]));
+        }
+        
     }
 
     /**
@@ -33,9 +63,18 @@ class Worker extends Server
      */
     public function onConnect($connection)
     {
+        // var_dump($connection->getRemoteIp());
+        // var_dump($connection);
         //将用户添加到用户群列表中
-        $this->uidConnections[$connection->id] = $connection;
+        // $this->uidConnections[$connection->id] = $connection;
         //每个用户发送用户列表
+        $connection->send(json_encode([
+            'trigger' => 'setUid',
+            'data' => [
+                'Uid' => $connection->id,
+                'name' => $connection->id.'--'.$connection->getRemoteIp()
+            ]
+        ]));
         $this->broadcast(json_encode(['trigger' => 'updateUserList', 'data' => $this->getAllUid()]));
         // foreach($connection as $k => $v){
         //     var_dump($v);
@@ -44,7 +83,6 @@ class Worker extends Server
         // $mc->connect('127.0.0.1', 11211);
         // $mc->set($connection->id, $connection->name);
         // $mc->close();
-
     }
 
     /**
@@ -76,7 +114,6 @@ class Worker extends Server
      */
     public function onWorkerStart($worker)
     {
-
     }
 
     
@@ -85,7 +122,7 @@ class Worker extends Server
      * @param $message
      */
     public function broadcast($message){
-        foreach($this->uidConnections as $connection){
+        foreach($this->worker->connections as $connection){
             $connection->send($message);
         }
     }
@@ -96,21 +133,26 @@ class Worker extends Server
      * @param $message
      */
     public function sendByUid($uid, $message){
-        if(isset($this->uidConnections[$uid])){
-            $this->uidConnections[$uid]->send($message);
+        if(is_array($message) || is_object($message)){
+            $message = json_encode($message);
         }
+        if(isset($this->worker->connections[$uid])){
+            $this->worker->connections[$uid]->send($message);
+            return true;
+        }
+        return false;
     }
 
     
     /**
-     * 指定uid推送数据
+     * 获取所有用户信息
      * @param $uid
      * @param $message
      */
     public function getAllUid(){
         $array = array();
-        foreach($this->uidConnections as $connection){
-            $array[$connection->uid] = $connection->_remoteAddress;
+        foreach($this->worker->connections as $connection){
+            $array[$connection->id] = $connection->id.'--'.$connection->getRemoteIp();
         }
         return $array;
     }
