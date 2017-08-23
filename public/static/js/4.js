@@ -804,7 +804,6 @@ exports.default = {
         onLineUserList: function onLineUserList() {
             for (var i in this.userList) {
                 if (i == this.user.Uid) {
-                    console.log(this.userList);
                     delete this.userList[i];
                     break;
                 }
@@ -855,7 +854,7 @@ exports.default = {
         var _this = this;
 
         if (WebSocket) {
-            this.ws = new WebSocket('ws://127.0.0.1:1234');
+            this.ws = new WebSocket('ws://101.132.40.213:1234');
             this.ws.onopen = function () {
                 // alert("连接成功");
                 // this.ws.send('tom');
