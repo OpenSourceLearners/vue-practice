@@ -7,5 +7,4 @@ class Index extends Controller{
     {
         return $this->view->fetch();
     }
-
 }
