@@ -25,13 +25,15 @@ class Login extends Base {
             $user = Db::name('user')->where($where)->find();
             if ($user) {
                 Db::name('user')->where(array('user_id' => $user['user_id']))->update(array('last_time' => time(), 'last_ip' => request()->ip()));
-                $token = md5($user['username'] . $user['user_id']);
+                $token = md5($user['username'] . $user['user_id'].rand(999, 9999).time());
+                session('Uid',$user['user_id']);
+                session('token',$token);
                 $mem = new \Memcache();
                 $mem->connect('127.0.0.1','11211');
-                $UserInfo=['UserName'=>$user['username'],'UserId'=>$user['user_id'],'token'=>$token];
+                $UserInfo[]=['UserName'=>$user['username'],'UserId'=>$user['user_id'],'token'=>$token];
                 $mem->set('UserInfo', $UserInfo);
                 return $this->GetCorrect('登录成功！',['token'=>$token]);
-            } else {
+            }else {
                 return $this->GetError('登录失败，账号或密码错误');
             }
         } else {

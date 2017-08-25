@@ -68,6 +68,7 @@ class Worker extends Server
         //将用户添加到用户群列表中
         // $this->uidConnections[$connection->id] = $connection;
         //每个用户发送用户列表
+        
         $connection->send(json_encode([
             'trigger' => 'setUid',
             'data' => [
@@ -150,6 +151,7 @@ class Worker extends Server
      * @param $message
      */
     public function getAllUid(){
+     
         $array = array();
         foreach($this->worker->connections as $connection){
             $array[$connection->id] = $connection->id.'--'.$connection->getRemoteIp();
