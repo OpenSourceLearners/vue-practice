@@ -8,7 +8,8 @@ class Index extends Base{
         return $this->view->fetch();
     }
     public function userInfo(){
-        $where=isset(session('Uid'))?session('Uid'):0;
+        // $where=isset(session('Uid'))?session('Uid'):0;
+        $where = Session::has('Uid') ? Sessoin::get('Uid') : 0;
         $user = new User();
         $data= $user->getUserInfo($where);
         try {

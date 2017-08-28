@@ -11,6 +11,7 @@ const login = resolve => require(['../views/login'], resolve);
 const register = resolve => require(['../views/register'], resolve);
 const datePicker = resolve => require(['../views/content/datePickerTest'], resolve);
 const content = resolve => require(['../views/content/content'], resolve);
+const chatRoom = resolve => require(['../views/chatRoom/chatRoom'], resolve);
 
 // const App = resolve => require.ensure(['../App.vue'], () => resoleve(require('../App.vue')));
 // const App = resolve => require.ensure(['../views/home/home.vue'], () => resoleve(require('../views/home/home.vue')));
@@ -38,6 +39,7 @@ var myRouter =  new Router({
                         }
                     ],
                 },
+                { path : '/chat-room/:Uid', component: chatRoom },
                 { path: '/login', component: login, meta: { noAuth: true } },
                 { path: '/register', component: register,meta: { noAuth: true } },
                 { path: '*', redirect: '/home'}

@@ -1,19 +1,19 @@
 webpackJsonp([1],{
 
-/***/ 124:
+/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_datePickerTest_vue__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_datePickerTest_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_datePickerTest_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_d692e450_hasScoped_false_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_datePickerTest_vue__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_content_vue__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_content_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_content_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_51c1a91f_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_content_vue__ = __webpack_require__(213);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(177)
+  __webpack_require__(193)
 }
-var normalizeComponent = __webpack_require__(127)
+var normalizeComponent = __webpack_require__(128)
 /* script */
 
 /* template */
@@ -21,19 +21,19 @@ var normalizeComponent = __webpack_require__(127)
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-51c1a91f"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_datePickerTest_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_d692e450_hasScoped_false_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_datePickerTest_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_content_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_51c1a91f_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_content_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src\\views\\content\\datePickerTest.vue"
+Component.options.__file = "src\\views\\content\\content.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] datePickerTest.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] content.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -42,9 +42,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-d692e450", Component.options)
+    hotAPI.createRecord("data-v-51c1a91f", Component.options)
   } else {
-    hotAPI.reload("data-v-d692e450", Component.options)
+    hotAPI.reload("data-v-51c1a91f", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -56,7 +56,7 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 126:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -75,7 +75,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(128)
+var listToStyles = __webpack_require__(129)
 
 /*
 type StyleObject = {
@@ -278,7 +278,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 127:
+/***/ 128:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -376,7 +376,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 128:
+/***/ 129:
 /***/ (function(module, exports) {
 
 /**
@@ -410,23 +410,23 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 177:
+/***/ 193:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(178);
+var content = __webpack_require__(194);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(126)("0b080d5a", content, false);
+var update = __webpack_require__(127)("09020364", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d692e450\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./datePickerTest.vue", function() {
-     var newContent = require("!!../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d692e450\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./datePickerTest.vue");
+   module.hot.accept("!!../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-51c1a91f\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./content.vue", function() {
+     var newContent = require("!!../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-51c1a91f\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./content.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -437,7 +437,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 178:
+/***/ 194:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(48)(undefined);
@@ -445,14 +445,14 @@ exports = module.exports = __webpack_require__(48)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.content-box[data-v-51c1a91f]{\n    /* overflow: hidden; */\n    border-top: 1px solid #efefef;\n    border-bottom: 1px solid #efefef;\n    width: 300%;\n    height: 100%;\n    display: flex;\n    position: relative;\n}\n.page-item[data-v-51c1a91f]{\n    overflow: hidden;\n    width: 100%;\n    height: 100%;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 179:
+/***/ 195:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -462,281 +462,236 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _datePicker = __webpack_require__(180);
+var _stringify = __webpack_require__(196);
 
-var _datePicker2 = _interopRequireDefault(_datePicker);
+var _stringify2 = _interopRequireDefault(_stringify);
 
-var _util = __webpack_require__(190);
+var _chat = __webpack_require__(198);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _chat2 = _interopRequireDefault(_chat);
 
-//
-//
-//
-//
-//
-//
-//
-//
+var _friends = __webpack_require__(203);
 
-exports.default = {
-    name: 'datePickerTest',
-    components: {
-        'date-picker': _datePicker2.default
-    },
-    props: {},
-    data: function data() {
-        return {
-            datePicker: {
-                start: new Date(2017, 7, 1),
-                end: new Date(2017, 9, 21),
-                show: false,
-                date: new Date()
-            },
-            send: {
-                timestamp: new Date().getTime()
-            }
-        };
-    },
+var _friends2 = _interopRequireDefault(_friends);
 
-    computed: {
-        dateStr: function dateStr() {
-            return (0, _util.dateFormat)('yyyy-MM-dd hh:mm:ss', this.datePicker.date);
-        }
-    },
-    watch: {},
-    methods: {
-        updateDate: function updateDate(date) {
-            this.datePicker.date = date;
-            this.send.timestamp = date.getTime();
-            this.datePicker.show = false;
-        }
-    },
-    created: function created() {},
-    destroyed: function destroyed() {},
-    mounted: function mounted() {}
-};
+var _myInfo = __webpack_require__(208);
 
-/***/ }),
-
-/***/ 180:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_datePicker_vue__ = __webpack_require__(183);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_datePicker_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_datePicker_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_8af5282e_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_datePicker_vue__ = __webpack_require__(189);
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(181)
-}
-var normalizeComponent = __webpack_require__(127)
-/* script */
-
-/* template */
-
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-8af5282e"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_datePicker_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_8af5282e_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_datePicker_vue__["a" /* default */],
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src\\components\\datePicker\\datePicker.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] datePicker.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-8af5282e", Component.options)
-  } else {
-    hotAPI.reload("data-v-8af5282e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
-
-
-/***/ }),
-
-/***/ 181:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(182);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(126)("2ed894c1", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-8af5282e\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./datePicker.vue", function() {
-     var newContent = require("!!../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-8af5282e\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./datePicker.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 182:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(48)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.app[data-v-8af5282e] {\n    min-width: 320px;\n    display: flex;\n    flex-direction: column;\n    position: fixed;\n    bottom: 0;\n    left:0;\n    right: 0;\n    margin-left: auto;\n    margin-right: auto;\n}\n.head[data-v-8af5282e] {\n    height: 40px;\n    background: #fff;\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    border-top: 0.5px solid #eee;\n}\n.head .determine[data-v-8af5282e] {\n    font-size: 14px;\n    color: #18a2ea;\n    margin-right: 20px;\n    background: transparent;\n    border: none;\n}\n.app .content[data-v-8af5282e] {\n    height: 197px;\n    background: #f7f7f7;\n}\n.app .content .scroll-box[data-v-8af5282e] {\n    display: flex;\n    justify-content: center;\n    position: relative;\n    z-index: 2;\n}\n.app .doubel-line[data-v-8af5282e] {\n    width: 100%;\n    height: 33px;\n    border-top: 0.5px solid #99a9c0;\n    border-bottom: 0.5px solid #99a9c0;\n    background: transparent;\n    position: absolute;\n    top: 139px;\n    z-index: 1;\n}\n.bottom-slide-enter-active[data-v-8af5282e], .bottom-slide-leave-active[data-v-8af5282e]{\n    transition: transform .5s\n}\n.bottom-slide-enter[data-v-8af5282e], .bottom-slide-leave-to[data-v-8af5282e]{\n    transform: translateY(100%);\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 183:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _scrollBar = __webpack_require__(184);
-
-var _scrollBar2 = _interopRequireDefault(_scrollBar);
+var _myInfo2 = _interopRequireDefault(_myInfo);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-    name: 'datePicker',
+    name: 'content',
     components: {
-        // 滚动条组件
-        'scroll-bar': _scrollBar2.default
+        'my-chat': _chat2.default,
+        'my-friends': _friends2.default,
+        'my-info': _myInfo2.default
     },
     props: {
-        //开始时间的日期对象
-        startDate: {
-            type: Date,
-            require: true
-        },
-        //结束的时间日期对象
-        endDate: {
-            type: Date,
-            require: true
-        },
-        //默认的时间对象
-        defaultDate: {
-            type: Date,
-            // require: true,
-            default: function _default() {
-                return new Date();
-            }
-        },
-        //日期类型
-        dateType: {
+        value: {
             type: Number,
-            default: 1
-        },
-        show: {
-            type: Boolean,
-            default: false
+            default: 0
         }
     },
     data: function data() {
         return {
-            //年的范围数组
-            yearData: this.createScopeArray(this.startDate.getFullYear(), this.endDate.getFullYear()),
-            //默认年索引
-            yearIndex: this.defaultDate.getFullYear() - this.startDate.getFullYear(),
-            //月的范围数组
-            monthData: this.createScopeArray(1, 12),
-            //默认月索引
-            monthIndex: this.defaultDate.getMonth(),
-            //默认日的索引
-            dayIndex: this.defaultDate.getDate() - 1,
-            //小时的范围数组
-            hoursData: this.createScopeArray(0, 23),
-            //默认小时索引
-            hoursIndex: this.defaultDate.getHours(),
-            //分钟的范围数组
-            minutesData: this.createScopeArray(0, 59),
-            //默认分钟索引
-            minutesIndex: this.defaultDate.getMinutes()
+            index: this.value,
+            chatList: [{
+                name: '张三',
+                message: '你好！',
+                color: 'rgba(0, 255, 139, 0.73)',
+                date: '21:44',
+                left: 0
+            }, {
+                name: '李四',
+                message: '快下来！！！',
+                color: '#36e2cc',
+                date: '21:35',
+                left: 0
+            }, {
+                name: '王五',
+                message: '在干嘛呢',
+                color: 'rgba(0, 0, 0, 0.73)',
+                date: '21:19',
+                left: 0
+            }, {
+                name: '王五',
+                message: '在干嘛呢',
+                color: 'rgba(0, 0, 0, 0.73)',
+                date: '21:19',
+                left: 0
+            }, {
+                name: '张三',
+                message: '你好！',
+                color: 'rgba(0, 255, 139, 0.73)',
+                date: '21:44',
+                left: 0
+            }, {
+                name: '张三',
+                message: '你好！',
+                color: 'rgba(0, 255, 139, 0.73)',
+                date: '21:44',
+                left: 0
+            }, {
+                name: '李四',
+                message: '快下来！！！',
+                color: '#36e2cc',
+                date: '21:35',
+                left: 0
+            }, {
+                name: '王五',
+                message: '在干嘛呢',
+                color: 'rgba(0, 0, 0, 0.73)',
+                date: '21:19',
+                left: 0
+            }, {
+                name: '王五',
+                message: '在干嘛呢',
+                color: 'rgba(0, 0, 0, 0.73)',
+                date: '21:19',
+                left: 0
+            }, {
+                name: '张三',
+                message: '你好！',
+                color: 'rgba(0, 255, 139, 0.73)',
+                date: '21:44',
+                left: 0
+            }, {
+                name: '张三',
+                message: '你好！',
+                color: 'rgba(0, 255, 139, 0.73)',
+                date: '21:44',
+                left: 0
+            }, {
+                name: '李四',
+                message: '快下来！！！',
+                color: '#36e2cc',
+                date: '21:35',
+                left: 0
+            }, {
+                name: '王五',
+                message: '在干嘛呢',
+                color: 'rgba(0, 0, 0, 0.73)',
+                date: '21:19',
+                left: 0
+            }, {
+                name: '王五',
+                message: '在干嘛呢',
+                color: 'rgba(0, 0, 0, 0.73)',
+                date: '21:19',
+                left: 0
+            }, {
+                name: '张三',
+                message: '你好！',
+                color: 'rgba(0, 255, 139, 0.73)',
+                date: '21:44',
+                left: 0
+            }],
+            startX: 0,
+            userList: [],
+            chatRecord: [],
+            send: {
+                Uid: 0,
+                message: ''
+            },
+            user: {
+                Uid: undefined,
+                name: undefined
+            }
         };
     },
 
     computed: {
-        dayData: function dayData() {
-            var date = new Date(this.yearData[this.yearIndex], this.monthData[this.monthIndex], 1);
-            var time = date.getTime() - 24 * 60 * 60 * 1000;
-            var length = new Date(time).getDate();
-            return this.createScopeArray(1, length);
+        username: function username() {
+            return sessionStorage.getItem('username');
+        },
+        onLineUserList: function onLineUserList() {
+            for (var i in this.userList) {
+                if (i == this.user.Uid) {
+                    delete this.userList[i];
+                    break;
+                }
+            }
+            return this.userList;
         }
     },
-    watch: {},
+    watch: {
+        value: function value(newVal, oldVal) {
+            this.index = newVal;
+        },
+        index: function index(newVal, oldVal) {
+            this.$emit('input', newVal);
+        }
+    },
     methods: {
-        // 创建一个数组范围数组
-        createScopeArray: function createScopeArray(start, end) {
-            var array = new Array();
-            for (; start <= end; start++) {
-                array[array.length] = start;
-            }
-            return array;
+        //删除聊天记录项
+        deleteItem: function deleteItem(index) {
+            this.chatList.splice(index, 1);
         },
 
-        //双向绑定年
-        // chengeYear(index) {
-        //     this.yearIndex = index;
+        // slideStart(event, index){
         // },
-        // //双向绑定月
-        // chengeMonth(index) {
-        //     this.monthIndex = index;
+        // slideMove(event, index){
+
         // },
-        // //双向绑定日
-        // chengeDay(index) {
-        //     this.dayIndex = index;
+        // slideEnd(event){
+
         // },
-        // //双向绑定时
-        // chengeHours(index) {
-        //     this.hoursIndex = index;
-        // },
-        // //双向绑定分
-        // chengeMinutes(index) {
-        //     this.minutesIndex = index
-        // },
-        //确定事件
-        determine: function determine() {
-            var data = new Date(this.yearData[this.yearIndex], this.monthData[this.monthIndex] - 1, this.dayData[this.dayIndex], this.hoursData[this.hoursIndex], this.minutesData[this.minutesIndex]);
-            this.$emit('triggerUpdateDate', data);
+        //发送信息
+        sendMsg: function sendMsg() {
+            if (this.send.message == '') {
+                alert('信息不能为空');
+                return;
+            }
+            this.ws.send((0, _stringify2.default)({
+                method: 'sendMsg',
+                data: this.send
+            }));
+            this.chatRecord.push({
+                user: this.user.name,
+                message: this.send.message
+            });
+            this.send.message = '';
         }
     },
-    created: function created() {},
+    created: function created() {
+        var _this = this;
+
+        if (WebSocket) {
+            this.ws = new WebSocket('ws://101.132.40.213:1234');
+            this.ws.onopen = function () {
+                // alert("连接成功");
+                // this.ws.send('tom');
+                // alert("给服务端发送一个字符串：tom");
+            };
+            this.ws.onmessage = function (e) {
+                // alert("收到服务端的消息：" + e.data);
+                var data = JSON.parse(e.data);
+                switch (data.trigger) {
+                    case 'updateUserList':
+                        _this.userList = data.data;
+                        break;
+                    case 'acceptMsg':
+                        data = data.data;
+                        _this.chatRecord.push({
+                            user: data.sendUser,
+                            message: data.message,
+                            date: data.date
+                        });
+                        break;
+                    case 'setUid':
+                        _this.user.Uid = data.data.Uid;
+                        _this.user.name = data.data.name;
+                        break;
+                    case 'Error':
+                        alert(data.message);
+                        break;
+                }
+            };
+        } else {
+            alert('您得浏览器不支持WebSocket');
+        }
+    },
     destroyed: function destroyed() {},
     mounted: function mounted() {}
 }; //
@@ -768,83 +723,42 @@ exports.default = {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /***/ }),
 
-/***/ 184:
+/***/ 196:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(197), __esModule: true };
+
+/***/ }),
+
+/***/ 197:
+/***/ (function(module, exports, __webpack_require__) {
+
+var core = __webpack_require__(3);
+var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
+module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
+  return $JSON.stringify.apply($JSON, arguments);
+};
+
+
+/***/ }),
+
+/***/ 198:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_scrollBar_vue__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_scrollBar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_scrollBar_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_603dad89_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_scrollBar_vue__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_chat_vue__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_chat_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_chat_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_4b2cb011_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_chat_vue__ = __webpack_require__(202);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(185)
+  __webpack_require__(199)
 }
-var normalizeComponent = __webpack_require__(127)
+var normalizeComponent = __webpack_require__(128)
 /* script */
 
 /* template */
@@ -852,19 +766,19 @@ var normalizeComponent = __webpack_require__(127)
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-603dad89"
+var __vue_scopeId__ = "data-v-4b2cb011"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_scrollBar_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_603dad89_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_scrollBar_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_chat_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_4b2cb011_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_chat_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src\\components\\datePicker\\scrollBar.vue"
+Component.options.__file = "src\\views\\content\\sub\\chat.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] scrollBar.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] chat.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -873,9 +787,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-603dad89", Component.options)
+    hotAPI.createRecord("data-v-4b2cb011", Component.options)
   } else {
-    hotAPI.reload("data-v-603dad89", Component.options)
+    hotAPI.reload("data-v-4b2cb011", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -887,23 +801,23 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 185:
+/***/ 199:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(186);
+var content = __webpack_require__(200);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(126)("5180c862", content, false);
+var update = __webpack_require__(127)("fddd76ec", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-603dad89\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./scrollBar.vue", function() {
-     var newContent = require("!!../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-603dad89\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./scrollBar.vue");
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4b2cb011\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./chat.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4b2cb011\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./chat.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -914,7 +828,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 186:
+/***/ 200:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(48)(undefined);
@@ -922,14 +836,14 @@ exports = module.exports = __webpack_require__(48)(undefined);
 
 
 // module
-exports.push([module.i, "\nhtml[data-v-603dad89],\nbody[data-v-603dad89] {\n    height: 100%;\n}\n.scrollBar[data-v-603dad89] {\n    width: 80px;\n    height: 197px;\n    display: flex;\n    flex-direction: column;\n    background: transparent;\n}\n.scrollBar .scroll-bar-title[data-v-603dad89] {\n    font-size: 12px;\n    color: #666;\n    line-height: 1em;\n    text-align: center;\n    padding: 20px 0 8px 0;\n}\n.scrollBar .scroll-bar-box[data-v-603dad89] {\n    height: 197px;\n    overflow: hidden;\n    position: relative;\n}\n.scrollBar .scroll-bar-box .scroll-bar[data-v-603dad89] {\n    width: 80px;\n    position: absolute;\n    padding-bottom: 60px;\n}\n.scrollBar .scroll-bar-box .scroll-bar .scroll-bar-tiansition[data-v-603dad89] {\n    transition: top 0s;\n}\n.scrollBar .scroll-bar-box .scroll-bar .option[data-v-603dad89] {\n    width: 80px;\n    font-size: 14px;\n    color: #99a9c0;\n    line-height: 1em;\n    text-align: center;\n    padding: 8px 0;\n}\n.scrollBar .scroll-bar-box .scroll-bar .selected-option[data-v-603dad89] {\n    font-size: 16px;\n    color: #18a2ea;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* .chat-record {\n    border: 1px solid #000;\n    padding: 0;\n    height: 80%;\n}\n.chat-record li{\n    list-style: none;\n    padding: 0.5rem;\n    min-height: 2rem;\n    display: flex;\n}\n.send-user{\n    font-size: 1rem;\n    font-weight: bold;\n    height: 2rem;\n    line-height: 2rem;\n    display: inline-block;\n    padding: 0 1rem;\n}\n.chat-message{\n    font-size: 0.6rem;\n    line-height: 1.2rem;\n    display: inline-block;\n    padding: 0.5rem;\n} */\n.chat-list[data-v-4b2cb011]{\n    width: 100%;\n    height: 100%;\n    overflow-x: hidden;\n    overflow-y: scroll;\n    padding-right: 16px;\n}\n.chat-list-item-box[data-v-4b2cb011]{\n    width: 100%;\n    height: 4rem;\n    overflow: hidden;\n    border-bottom: 1px solid #efefef;\n}\n.chat-list-item[data-v-4b2cb011]{\n    width: 100%;\n    display: flex;\n    height: 4rem;\n    padding-bottom: 16px;\n    overflow-y:hidden;\n    overflow-y:hidden;\n    overflow-x:scroll;\n}\n.chat-list-item[data-v-4b2cb011]:last-child{\n    border-bottom: none;\n}\n.head-portrait[data-v-4b2cb011]{\n    width: 3rem;\n    height: 3rem;\n    margin: 0.5rem;\n    -moz-border-radius: 2rem;\n    -webkit-border-radius: 2rem;\n    border-radius: 2rem;\n}\n.description[data-v-4b2cb011]{\n    flex: 1;\n    display: flex;\n    padding: 0.5rem;\n    flex-direction: column;\n    position: relative;\n}\n.description .name[data-v-4b2cb011]{\n    color: #333;\n    font-weight: bold;\n    font-size: 1rem;\n    line-height: 2rem;\n}\n.description .message[data-v-4b2cb011]{\n    flex: 1;\n    color: #999;\n    font-size: 0.6rem;\n    line-height: 0.6em;\n}\n.description .date[data-v-4b2cb011]{\n    position: absolute;\n    right: 1rem;\n    top: 0.8rem;\n}\n.delete-box[data-v-4b2cb011]{\n    width: 4rem;\n    margin-right: -4.5rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.delete-btn[data-v-4b2cb011]{\n    width: 1.8rem;\n    height: 1.8rem;\n    border-radius: 1rem;\n    background: #ddd;\n    position: relative;\n}\n.delete-line-1[data-v-4b2cb011]{\n    display: block;\n    width: 1.0rem;\n    height: 0.2rem;\n    background: #fff;\n    position: absolute;\n    top: 0;\n    right: 0;\n    left: 0;\n    bottom: 0;\n    margin: auto;\n    transform:rotate(45deg);\n}\n.delete-line-2[data-v-4b2cb011]{\n    display: block;\n    width: 1.0rem;\n    height: 0.2rem;\n    background: #fff;\n    position: absolute;\n    top: 0;\n    right: 0;\n    left: 0;\n    bottom: 0;\n    margin: auto;\n    transform:rotate(-45deg);\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 187:
+/***/ 201:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -938,6 +852,94 @@ exports.push([module.i, "\nhtml[data-v-603dad89],\nbody[data-v-603dad89] {\n    
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1013,142 +1015,94 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-    name: 'scrollBar',
+    name: 'chat',
     components: {},
-    props: {
-        //滚动条标题
-        title: {
-            type: String,
-            default: '日期',
-            require: true
-        },
-        //选择的数据
-        data: {
-            type: Array,
-            default: [],
-            require: true
-        },
-        //默认索引值
-        // defaultIndex: {
-        //     type: Number,
-        //     default: 0,
-        // }
-        value: {
-            type: Number,
-            default: 0
-        }
-    },
+    props: {},
     data: function data() {
         return {
-            //选中的索引
-            selectIndex: this.value,
-            //开始触摸的Y轴位置
-            startY: 0,
-            //上一次事件的Y轴位置
-            lastY: 0,
-            //最后一次的Y轴位置
-            endY: 0,
-            //滑动开始的时间戳
-            startTime: 0,
-            //是否要开启动画
-            switchTiansition: false,
-            //过渡动画时间
-            tiansitionTime: 0.5
+            chatList: [{
+                name: '张三',
+                message: '你好！',
+                color: 'rgba(0, 255, 139, 0.73)',
+                date: '21:44'
+
+            }, {
+                name: '李四',
+                message: '快下来！！！',
+                color: '#36e2cc',
+                date: '21:35'
+            }, {
+                name: '王五',
+                message: '在干嘛呢',
+                color: 'rgba(0, 0, 0, 0.73)',
+                date: '21:19'
+            }, {
+                name: '王五',
+                message: '在干嘛呢',
+                color: 'rgba(0, 0, 0, 0.73)',
+                date: '21:19'
+            }, {
+                name: '张三',
+                message: '你好！',
+                color: 'rgba(0, 255, 139, 0.73)',
+                date: '21:44'
+
+            }, {
+                name: '李四',
+                message: '快下来！！！',
+                color: '#36e2cc',
+                date: '21:35'
+            }, {
+                name: '张三',
+                message: '你好！',
+                color: 'rgba(0, 255, 139, 0.73)',
+                date: '21:44'
+
+            }, {
+                name: '李四',
+                message: '快下来！！！',
+                color: '#36e2cc',
+                date: '21:35'
+            }, {
+                name: '张三',
+                message: '你好！',
+                color: 'rgba(0, 255, 139, 0.73)',
+                date: '21:44'
+
+            }, {
+                name: '李四',
+                message: '快下来！！！',
+                color: '#36e2cc',
+                date: '21:35'
+            }, {
+                name: '张三',
+                message: '你好！',
+                color: 'rgba(0, 255, 139, 0.73)',
+                date: '21:44'
+
+            }, {
+                name: '李四',
+                message: '快下来！！！',
+                color: '#36e2cc',
+                date: '21:35'
+            }, {
+                name: '张三',
+                message: '你好！',
+                color: 'rgba(0, 255, 139, 0.73)',
+                date: '21:44'
+
+            }, {
+                name: '李四',
+                message: '快下来！！！',
+                color: '#36e2cc',
+                date: '21:35'
+            }]
         };
     },
 
-    computed: {
-        //获取选中的位置值
-        getSelectLocation: function getSelectLocation() {
-            return (this.selectIndex - 2) * 30;
-        }
-    },
-    watch: {
-        //更新位置
-        data: function data(newVal, oldVal) {
-            this.selectIndex = this.checkOutScope(this.selectIndex);
-        },
-        value: function value(newVal, oldVal) {
-            this.selectIndex = newVal;
-        }
-    },
-    methods: {
-        //触摸开始事件
-        start: function start(event) {
-            //阻止默认事件
-            event.preventDefault();
-            this.tiansitionTime = 0;
-            //关闭过渡动画
-            this.switchTiansition = false;
-            //存储事件开始事件
-            this.startTime = new Date().getTime();
-            //存开始的Y轴位置
-            this.startY = event.touches[0].clientY;
-            //存最后一次的Y轴位置
-            this.lastY = this.startY;
-            this.endY = this.lastY;
-        },
-
-        //触摸滑动事件
-        move: function move(event) {
-            //阻止默认事件
-            event.preventDefault();
-            //存储最后一次Y轴位置
-            this.endY = event.touches[0].clientY;
-            //获取滑动距离
-            var distance = this.lastY - this.endY;
-            //重新定位选中的日期位置
-            this.selectIndex = this.checkOutScope(this.selectIndex + distance / 30);
-            //将最后一次Y轴距离赋值给上一次滑动距离
-            this.lastY = this.endY;
-        },
-
-        //触摸结束事件
-        end: function end(event) {
-            //将位置四舍五入，选中日期
-            //设置过渡动画时间
-            //获取开始到结束的滑动距离
-            var distance = this.endY - this.startY;
-            //获取开始到结束的所用时间
-            var time = new Date().getTime() - this.startTime;
-            //计算滑动的速度
-            var speed = distance / time;
-            //判断速度是否到达要求进行快速滑动
-            speed *= 1.2;
-            if (Math.abs(distance) > 15 && Math.abs(speed) > 0.5) {
-                //过渡长度
-                var tiansitionLength = speed * 15;
-                //开启过渡
-                this.tiansitionTime = 1 / Math.abs(speed);
-                //重新定位选中的日期位置
-                this.selectIndex = this.checkOutScope(Math.round(this.selectIndex - tiansitionLength));
-            } else {
-                //锁定定位
-                this.tiansitionTime = 0.1;
-                this.selectIndex = Math.round(this.selectIndex);
-            }
-            this.chenge();
-        },
-        cancel: function cancel(event) {
-            end(event);
-        },
-
-        //检查是否超出范围
-        checkOutScope: function checkOutScope(selectIndex) {
-            if (selectIndex < 0) {
-                return 0;
-            } else if (selectIndex >= this.data.length - 1) {
-                return this.data.length - 1;
-            } else {
-                return selectIndex;
-            }
-        },
-
-        //触发改变位置
-        chenge: function chenge() {
-            this.$emit('input', this.selectIndex);
-        }
-    },
+    computed: {},
+    watch: {},
+    methods: {},
     created: function created() {},
     destroyed: function destroyed() {},
     mounted: function mounted() {}
@@ -1156,38 +1110,47 @@ exports.default = {
 
 /***/ }),
 
-/***/ 188:
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "scrollBar"
-  }, [_c('div', {
-    staticClass: "scroll-bar-title"
-  }, [_vm._v("\n        " + _vm._s(_vm.title) + "\n    ")]), _vm._v(" "), _c('div', {
-    staticClass: "scroll-bar-box",
-    on: {
-      "touchstart": _vm.start,
-      "touchmove": _vm.move,
-      "touchend": _vm.end,
-      "touchcancel": _vm.cancel
-    }
-  }, [_c('div', {
-    staticClass: "scroll-bar",
-    style: ({
-      top: -_vm.getSelectLocation + 'px',
-      transition: 'top ' + _vm.tiansitionTime + 's ease'
-    })
-  }, _vm._l((_vm.data), function(item, index) {
-    return _c('div', {
+    staticClass: "chat-list"
+  }, _vm._l((_vm.chatList), function(item, index) {
+    return _c('section', {
       key: index,
-      staticClass: "option",
-      class: {
-        'selected-option': (_vm.selectIndex >= (index - 0.5) && _vm.selectIndex < (index + 0.5))
+      staticClass: "chat-list-item-box"
+    }, [_c('div', {
+      staticClass: "chat-list-item"
+    }, [_c('p', {
+      staticClass: "head-portrait",
+      style: ({
+        'background': item.color
+      })
+    }), _vm._v(" "), _c('p', {
+      staticClass: "description"
+    }, [_c('span', {
+      staticClass: "name"
+    }, [_vm._v(_vm._s(item.name))]), _vm._v(" "), _c('span', {
+      staticClass: "message"
+    }, [_vm._v(_vm._s(item.message))]), _vm._v(" "), _c('span', {
+      staticClass: "date"
+    }, [_vm._v(_vm._s(item.date))])]), _vm._v(" "), _c('div', {
+      staticClass: "delete-box"
+    }, [_c('div', {
+      staticClass: "delete-btn",
+      on: {
+        "click": function($event) {
+          _vm.deleteItem(index)
+        }
       }
-    }, [_vm._v("\n                " + _vm._s(item) + "\n            ")])
-  }))])])
+    }, [_c('span', {
+      staticClass: "delete-line-1"
+    }), _vm._v(" "), _c('span', {
+      staticClass: "delete-line-2"
+    })])])])])
+  }))
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1196,179 +1159,111 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-603dad89", esExports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-4b2cb011", esExports)
   }
 }
 
 /***/ }),
 
-/***/ 189:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('transition', {
-    attrs: {
-      "name": "bottom-slide"
-    }
-  }, [_c('div', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.show),
-      expression: "show"
-    }],
-    staticClass: "app"
-  }, [_c('header', {
-    staticClass: "head"
-  }, [_c('input', {
-    staticClass: "determine",
-    attrs: {
-      "type": "button",
-      "value": "确定"
-    },
-    on: {
-      "click": _vm.determine
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "content"
-  }, [_c('div', {
-    staticClass: "scroll-box"
-  }, [(_vm.dateType == 1) ? [_c('scroll-bar', {
-    attrs: {
-      "title": '年',
-      "data": _vm.yearData,
-      "defaultIndex": _vm.yearIndex
-    },
-    model: {
-      value: (_vm.yearIndex),
-      callback: function($$v) {
-        _vm.yearIndex = $$v
-      },
-      expression: "yearIndex"
-    }
-  }), _vm._v(" "), _c('scroll-bar', {
-    attrs: {
-      "title": '月',
-      "data": _vm.monthData,
-      "defaultIndex": _vm.monthIndex
-    },
-    model: {
-      value: (_vm.monthIndex),
-      callback: function($$v) {
-        _vm.monthIndex = $$v
-      },
-      expression: "monthIndex"
-    }
-  }), _vm._v(" "), _c('scroll-bar', {
-    attrs: {
-      "title": '日',
-      "data": _vm.dayData,
-      "defaultIndex": _vm.dayIndex
-    },
-    model: {
-      value: (_vm.dayIndex),
-      callback: function($$v) {
-        _vm.dayIndex = $$v
-      },
-      expression: "dayIndex"
-    }
-  })] : (_vm.dateType == 2) ? [_c('scroll-bar', {
-    attrs: {
-      "title": '月',
-      "data": _vm.monthData,
-      "defaultIndex": _vm.monthIndex
-    },
-    model: {
-      value: (_vm.monthIndex),
-      callback: function($$v) {
-        _vm.monthIndex = $$v
-      },
-      expression: "monthIndex"
-    }
-  }), _vm._v(" "), _c('scroll-bar', {
-    attrs: {
-      "title": '日',
-      "data": _vm.dayData,
-      "defaultIndex": _vm.dayIndex
-    },
-    model: {
-      value: (_vm.dayIndex),
-      callback: function($$v) {
-        _vm.dayIndex = $$v
-      },
-      expression: "dayIndex"
-    }
-  }), _vm._v(" "), _c('scroll-bar', {
-    attrs: {
-      "title": '时',
-      "data": _vm.hoursData,
-      "defaultIndex": _vm.hoursIndex
-    },
-    model: {
-      value: (_vm.hoursIndex),
-      callback: function($$v) {
-        _vm.hoursIndex = $$v
-      },
-      expression: "hoursIndex"
-    }
-  }), _vm._v(" "), _c('scroll-bar', {
-    attrs: {
-      "title": '分',
-      "data": _vm.minutesData,
-      "defaultIndex": _vm.minutesIndex
-    },
-    model: {
-      value: (_vm.minutesIndex),
-      callback: function($$v) {
-        _vm.minutesIndex = $$v
-      },
-      expression: "minutesIndex"
-    }
-  })] : (_vm.dateType == 3) ? [_c('scroll-bar', {
-    attrs: {
-      "title": '时',
-      "data": _vm.hoursData,
-      "defaultIndex": _vm.hoursIndex
-    },
-    model: {
-      value: (_vm.hoursIndex),
-      callback: function($$v) {
-        _vm.hoursIndex = $$v
-      },
-      expression: "hoursIndex"
-    }
-  }), _vm._v(" "), _c('scroll-bar', {
-    attrs: {
-      "title": '分',
-      "data": _vm.minutesData,
-      "defaultIndex": _vm.minutesIndex
-    },
-    model: {
-      value: (_vm.minutesIndex),
-      callback: function($$v) {
-        _vm.minutesIndex = $$v
-      },
-      expression: "minutesIndex"
-    }
-  })] : _vm._e()], 2), _vm._v(" "), _c('div', {
-    staticClass: "doubel-line"
-  })])])])
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_friends_vue__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_friends_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_friends_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_157f93ec_hasScoped_false_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_friends_vue__ = __webpack_require__(207);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(204)
 }
-var staticRenderFns = []
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-if (false) {
+var normalizeComponent = __webpack_require__(128)
+/* script */
+
+/* template */
+
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_friends_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_157f93ec_hasScoped_false_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_friends_vue__["a" /* default */],
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\views\\content\\sub\\friends.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] friends.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
   module.hot.accept()
-  if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-8af5282e", esExports)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-157f93ec", Component.options)
+  } else {
+    hotAPI.reload("data-v-157f93ec", Component.options)
   }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ 204:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(205);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(127)("6d530efc", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-157f93ec\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./friends.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-157f93ec\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./friends.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
 }
 
 /***/ }),
 
-/***/ 190:
+/***/ 205:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(48)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 206:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1377,66 +1272,38 @@ if (false) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-function dateFormat(format, date) {
-    date = date || new Date();
-    var o = {
-        'y+': date.getFullYear(),
-        'M+': date.getMonth() + 1,
-        'd+': date.getDate(),
-        'h+': date.getHours(),
-        'm+': date.getMinutes(),
-        's+': date.getSeconds()
-    };
-    for (var i in o) {
-        format = format.replace(new RegExp(i), o[i] < 10 ? '0' + o[i] : o[i]);
-    }
-    return format;
-}
-exports.dateFormat = dateFormat;
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    name: 'friends',
+    components: {},
+    props: {},
+    data: function data() {
+        return {};
+    },
+
+    computed: {},
+    watch: {},
+    methods: {},
+    created: function created() {},
+    destroyed: function destroyed() {},
+    mounted: function mounted() {}
+};
 
 /***/ }),
 
-/***/ 191:
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.dateStr),
-      expression: "dateStr"
-    }],
-    attrs: {
-      "type": "text"
-    },
-    domProps: {
-      "value": (_vm.dateStr)
-    },
-    on: {
-      "focus": function($event) {
-        _vm.datePicker.show = true
-      },
-      "blur": function($event) {
-        _vm.datePicker.show = false
-      },
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.dateStr = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('date-picker', {
-    attrs: {
-      "startDate": _vm.datePicker.start,
-      "endDate": _vm.datePicker.end,
-      "defaultDate": _vm.datePicker.date,
-      "show": _vm.datePicker.show
-    },
-    on: {
-      "triggerUpdateDate": _vm.updateDate
-    }
-  })], 1)
+  return _c('div', [_vm._v("\n    friends\n")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1445,7 +1312,219 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-d692e450", esExports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-157f93ec", esExports)
+  }
+}
+
+/***/ }),
+
+/***/ 208:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_myInfo_vue__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_myInfo_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_myInfo_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_0a94301a_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_myInfo_vue__ = __webpack_require__(212);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(209)
+}
+var normalizeComponent = __webpack_require__(128)
+/* script */
+
+/* template */
+
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-0a94301a"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_script_index_0_myInfo_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_0_4_vue_loader_lib_template_compiler_index_id_data_v_0a94301a_hasScoped_true_node_modules_vue_loader_13_0_4_vue_loader_lib_selector_type_template_index_0_myInfo_vue__["a" /* default */],
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\views\\content\\sub\\myInfo.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] myInfo.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0a94301a", Component.options)
+  } else {
+    hotAPI.reload("data-v-0a94301a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ 209:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(210);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(127)("1c9e1d54", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0a94301a\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./myInfo.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.5@css-loader/index.js!../../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0a94301a\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_vue-loader@13.0.4@vue-loader/lib/selector.js?type=styles&index=0!./myInfo.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 210:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(48)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.my-information[data-v-0a94301a]{\n    display: flex;\n    flex-direction: column;\n}\n.my-head-portrait[data-v-0a94301a]{\n    width: 5rem;\n    height: 5rem;-moz-border-radius: 5rem;\n    -webkit-border-radius: 5rem;\n    border-radius: 5rem;\n    background: #000;\n    margin: 2rem auto;\n}\n.my-username[data-v-0a94301a]{\n    text-align: center;\n    font-size: 1.5rem;\n    font-weight: bold;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 211:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    name: 'myInfo',
+    components: {},
+    props: {},
+    data: function data() {
+        return {};
+    },
+
+    computed: {
+        username: function username() {
+            return sessionStorage.getItem('username');
+        }
+    },
+    watch: {},
+    methods: {},
+    created: function created() {},
+    destroyed: function destroyed() {},
+    mounted: function mounted() {}
+};
+
+/***/ }),
+
+/***/ 212:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "my-information"
+  }, [_c('p', {
+    staticClass: "my-head-portrait"
+  }), _vm._v(" "), _c('p', {
+    staticClass: "my-username"
+  }, [_vm._v(_vm._s(_vm.username))])])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-0a94301a", esExports)
+  }
+}
+
+/***/ }),
+
+/***/ 213:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('article', {
+    staticClass: "content-box",
+    style: ({
+      left: -_vm.index * 100 + '%'
+    })
+  }, [_c('section', {
+    staticClass: "page-item"
+  }, [_c('my-chat')], 1), _vm._v(" "), _c('section', {
+    staticClass: "page-item"
+  }, [_c('my-friends')], 1), _vm._v(" "), _c('section', {
+    staticClass: "page-item"
+  }, [_c('my-info')], 1)])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-51c1a91f", esExports)
   }
 }
 
